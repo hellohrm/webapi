@@ -29,7 +29,8 @@ module.exports = function (app) {
         }
     }).post(function (req, res) {// handler receiving messages
         var events = req.body.entry[0].messaging;
-        for (i = 0; i < events.length; i++) {
+        var i;
+        for ( i = 0; i < events.length; i++) {
             var event = events[i];
             if (event.message && event.message.text) {
                 sendMessage(event.sender.id, { text: "Echo: " + event.message.text });
