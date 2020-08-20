@@ -27,7 +27,7 @@ module.exports = function (app) {
         } else {
             res.send('Invalid verify token');
         }
-    }).route('/webhook').post(function (req, res) {// handler receiving messages
+    }).post(function (req, res) {// handler receiving messages
         var events = req.body.entry[0].messaging;
         for (i = 0; i < events.length; i++) {
             var event = events[i];
