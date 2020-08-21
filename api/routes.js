@@ -51,7 +51,7 @@ module.exports = function (app) {
             qs: { access_token: process.env.PAGE_ACCESS_TOKEN },
             method: 'POST',
             json: {
-                recipient: { id:'167485091569906'  },
+                recipient: { id: recipientId },
                 message: message,
             }
         }, function (error, response, body) {
