@@ -41,7 +41,7 @@ module.exports = function (app) {
     //
     //
     const request = require('request');
-    // generic function sending messages
+    // generic function sending messages '110441870777146'
     function sendMessage(recipientId, message) {
         console.log('access_token: ', process.env.PAGE_ACCESS_TOKEN);
         console.log('recipientId: ', recipientId);
@@ -51,7 +51,7 @@ module.exports = function (app) {
             qs: { access_token: process.env.PAGE_ACCESS_TOKEN },
             method: 'POST',
             json: {
-                recipient: { id: '110441870777146' },
+                recipient: { id:recipientId  },
                 message: message,
             }
         }, function (error, response, body) {
