@@ -29,7 +29,8 @@ module.exports = function (app) {
         }
     }).post(function (req, res) {// handler receiving messages
         var events = req.body.entry[0].messaging;
-        for (i = 0; i < events.length; i++) {
+        var i;
+        for ( i = 0; i < events.length; i++) {
             var event = events[i];
             if (event.message && event.message.text) {
                 sendMessage(event.sender.id, { text: "Echo: " + event.message.text });
@@ -37,9 +38,14 @@ module.exports = function (app) {
         }
         res.sendStatus(200);
     });
-
+    //
+    //
+    const request = require('request');
     // generic function sending messages
     function sendMessage(recipientId, message) {
+        console.log('access_token: ', process.env.PAGE_ACCESS_TOKEN);
+        console.log('recipientId: ', recipientId);
+        console.log('message: ', message);
         request({
             url: 'https://graph.facebook.com/v2.6/me/messages',
             qs: { access_token: process.env.PAGE_ACCESS_TOKEN },
