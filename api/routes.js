@@ -64,22 +64,22 @@ module.exports = function (app) {
     };
 
     //https://developer.tawk.to/webhooks/8a25cff620291e86fc6c81755ee3b8c78268902623a610d42464c1724f78ee352bd59d237e5747e544aae06d2b965864
-    const WEBHOOK_SECRET = '8a25cff620291e86fc6c81755ee3b8c78268902623a610d42464c1724f78ee352bd59d237e5747e544aae06d2b965864';
-    const crypto = require('crypto');
-    function verifySignature(body, signature) {
-        const digest = crypto
-            .createHmac('sha1', WEBHOOK_SECRET)
-            .update(body)
-            .digest('hex');
-        return signature === digest;
-    };
-    app.route('/webhooks').post(function (req, res) {
-        if (!verifySignature(req.rawBody, req.headers['x-tawk-signature'])) {
-             //verification failed
-            console.log('verification failed: ', req.rawBody);
-        }
+    //const WEBHOOK_SECRET = '8a25cff620291e86fc6c81755ee3b8c78268902623a610d42464c1724f78ee352bd59d237e5747e544aae06d2b965864';
+    //const crypto = require('crypto');
+    //function verifySignature(body, signature) {
+    //    const digest = crypto
+    //        .createHmac('sha1', WEBHOOK_SECRET)
+    //        .update(body)
+    //        .digest('hex');
+    //    return signature === digest;
+    //};
+    //app.route('/webhooks').post(function (req, res) {
+    //    if (!verifySignature(req.rawBody, req.headers['x-tawk-signature'])) {
+    //         //verification failed
+    //        console.log('verification failed: ', req.rawBody);
+    //    }
          
-        console.log('verification success: ', req.rawBody);
-    });
+    //    console.log('verification success: ', req.rawBody);
+    //});
     //--------------------------------------------------------------------
 };
