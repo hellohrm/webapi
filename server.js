@@ -19,10 +19,10 @@ function verifySignature(body, signature) {
 };
 app.post('/webhooks', function (req, res, next) {
     console.log('verification success: ', req.body);
-    if (!verifySignature(req.body, req.headers['x-tawk-signature'])) {
-            //verification failed
-        console.log('verification failed: ', req.rawBody);
-    }
+    //if (!verifySignature(req.body, req.headers['x-tawk-signature'])) {
+    //        //verification failed
+    //    console.log('verification failed: ', req.rawBody);
+    //}
 
     //console.log('verification success: ', req.rawBody);
 });
