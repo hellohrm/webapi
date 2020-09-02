@@ -18,8 +18,8 @@ function verifySignature(body, signature) {
     return signature === digest;
 };
 app.post('/webhooks', function (req, res, next) {
-    console.log('verification success: ', req.headers['x-tawk-signature']);
-    if (!verifySignature(req.rawBody, req.headers['x-tawk-signature'])) {
+    console.log('verification success: ', req.body);
+    if (!verifySignature(req.body, req.headers['x-tawk-signature'])) {
             //verification failed
         console.log('verification failed: ', req.rawBody);
     }
