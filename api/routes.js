@@ -73,7 +73,7 @@ module.exports = function (app) {
             .digest('hex');
         return signature === digest;
     };
-    app.post('/webhooks', function (req, res, next) {
+    app.route('/webhooks').post(function (req, res, next) {
         if (!verifySignature(req.rawBody, req.headers['x-tawk-signature'])) {
             // verification failed
             console.log('verification failed: ', req.rawBody);
