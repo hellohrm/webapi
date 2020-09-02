@@ -18,12 +18,13 @@ function verifySignature(body, signature) {
     return signature === digest;
 };
 app.post('/webhooks', function (req, res, next) {
+    console.log('verification success: ', req.headers['x-tawk-signature']);
     if (!verifySignature(req.rawBody, req.headers['x-tawk-signature'])) {
             //verification failed
         console.log('verification failed: ', req.rawBody);
     }
 
-    console.log('verification success: ', req.rawBody);
+    //console.log('verification success: ', req.rawBody);
 });
 
 let routes = require('./api/routes') //importing route
