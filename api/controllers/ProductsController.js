@@ -1,8 +1,8 @@
 'use strict'
 
 const util = require('util')
-//const mysql = require('mysql')
-//const db = require('./../db')
+const mysql = require('mysql')
+const db = require('./../db')
 
 const table = 'products'
 
