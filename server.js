@@ -19,7 +19,7 @@ app.route('/keepalive').get(function (req, res) {
         month: "2-digit",
         day: "numeric"
     };
-    res.send(d.toLocaleString("vi", options));
+    res.send(d.toLocaleString("vi"));
 });
 function startKeepAlive() {
     setInterval(function () {
