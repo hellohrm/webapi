@@ -13,7 +13,13 @@ app.use(bodyParser.json())
 var https = require('https');
 app.route('/keepalive').get(function (req, res) {
     var d = new Date();
-    res.send(d.toLocaleString());
+    var options = {
+        weekday: "short",
+        year: "numeric",
+        month: "2-digit",
+        day: "numeric"
+    };
+    res.send(d.toLocaleString("vi", options));
 });
 function startKeepAlive() {
     setInterval(function () {
