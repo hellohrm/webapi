@@ -6,28 +6,35 @@ const port = process.env.PORT || 3000
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
-
-
-const WEBHOOK_SECRET = '8a25cff620291e86fc6c81755ee3b8c78268902623a610d42464c1724f78ee352bd59d237e5747e544aae06d2b965864';
-const crypto = require('crypto');
-function verifySignature(body, signature) {
-    const digest = crypto
-        .createHmac('sha1', WEBHOOK_SECRET)
-        .update(body)
-        .digest('hex');
-    return signature === digest;
-};
-app.post('/webhooks', function (req, res, next) {
-    console.log('verification success: ', req.body);
-    res.sendStatus(200);
-    //if (!verifySignature(req.body, req.headers['x-tawk-signature'])) {
-    //        //verification failed
-    //    console.log('verification failed: ', req.rawBody);
-    //}
-
-    //console.log('verification success: ', req.rawBody);
+//
+//
+//
+//START PREVENT HEROKU SLEEP ....................
+var https = require('https');
+app.route('/keepalive').get(function (req, res) {
+    var d = new Date();
+    res.send(d.toLocaleString());
 });
-
+function startKeepAlive() {
+    setInterval(function () {
+        var req = https.get("https://hellohrmapi.herokuapp.com/keepalive", function (res) {
+            res.on('data', function (chunk) {
+                try {
+                    // optional logging... disable after it's working
+                    console.log("HEROKU INVOKE OK: " + chunk);
+                } catch (err) {
+                    console.log("HEROKU INVOKE ERROR: " + err.message);
+                }
+            });
+        }).on('error', function (err) {
+            console.log("keepalive error: " + err.message);
+        });
+    }, 5 * 60 * 1000); // load every 20 minutes
+}
+startKeepAlive();
+//END PREVENT HEROKU SLEEP ....................
+//
+//
 let routes = require('./api/routes') //importing route
 routes(app)
 
