@@ -35,7 +35,7 @@ function startKeepAlive() {
         }).on('error', function (err) {
             console.log("keepalive error: " + err.message);
         });
-    }, 5 * 60 * 1000); // load every 20 minutes
+    }, 1 * 60 * 1000); // load every 20 minutes
 }
 startKeepAlive();
 //END PREVENT HEROKU SLEEP ....................
