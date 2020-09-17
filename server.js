@@ -23,7 +23,7 @@ app.route('/keepalive').get(function (req, res) {
 });
 function startKeepAlive() {
     setInterval(function () {
-        var req = https.get("https://hellohrmapi.herokuapp.com/keepalive", function (res) {
+        var req = https.get("https://hrpro.cf/localsrc/ping.php", function (res) {//"https://hellohrmapi.herokuapp.com/keepalive"
             res.on('data', function (chunk) {
                 try {
                     // optional logging... disable after it's working
@@ -35,7 +35,7 @@ function startKeepAlive() {
         }).on('error', function (err) {
             console.log("keepalive error: " + err.message);
         });
-    }, 5 * 60 * 1000); // load every 20 minutes
+    }, 1 * 60 * 1000); // load every 20 minutes
 }
 startKeepAlive();
 //END PREVENT HEROKU SLEEP ....................
