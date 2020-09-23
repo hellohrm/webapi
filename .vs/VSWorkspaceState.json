@@ -1,9 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\api",
     "\\api\\controllers"
   ],
-  "SelectedNode": "\\api\\routes.js",
+  "SelectedNode": "\\api",
   "PreviewInSolutionExplorer": false
 }
