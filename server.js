@@ -176,9 +176,9 @@ routes(app)
 
 app.use(function(req, res) {
     //res.status(404).send({ url: req.originalUrl + ' not found' })
-    //res.status(301).redirect('https://hrpro.cf/pages/invoice.html' + req.url)
+    //res.status(301).redirect('https://hrpro.cf/pages/invoice.html' + req.url) // 'http://192.168.1.91:10996/pages/testredirect.php?XDEBUG_SESSION_START=154A5348'
     res.writeHead(301,
-        { Location: 'https://hrpro.cf/pages/invoice.html' } //'https://192.168.1.91:10996/pages/invoice.html'
+        { Location: 'https://hrwin.cf/pages/testredirect.php' }////'http://192.168.1.91:10996/pages/invoice.html'
     );
     res.end();
 })

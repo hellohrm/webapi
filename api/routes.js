@@ -18,6 +18,7 @@ module.exports = function (app) {
     // Server frontpage
     app.route('/').get(function (req, res) {
         res.send('This is TestBot Server');
+        res.end();
     });
 
     // Facebook Webhook
