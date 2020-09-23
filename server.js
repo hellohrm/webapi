@@ -10,7 +10,7 @@ app.use(bodyParser.json())
 //
 //
 //START PREVENT HEROKU SLEEP ....................
-var https = require('http');
+var https = require('https');
 app.route('/keepalive').get(function (req, res) {
     var d = new Date();
     var options = {
