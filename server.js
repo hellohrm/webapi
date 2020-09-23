@@ -178,7 +178,7 @@ app.use(function(req, res) {
     //res.status(404).send({ url: req.originalUrl + ' not found' })
     //res.status(301).redirect('https://hrpro.cf/pages/invoice.html' + req.url)
     res.writeHead(301,
-        { Location: 'https://hrpro.cf/pages/invoice.html' } //'https://192.168.1.91:10996/pages/invoice.html'
+        { Location: 'https://hrpro.cf/pages/invoice.php' } //'https://192.168.1.91:10996/pages/invoice.html'
     );
     res.end();
 })
