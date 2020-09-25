@@ -23,7 +23,7 @@ module.exports = function (app) {
         client.auth(process.env.REDIS_PASS, function (err) {
             if (!err) {
                 client.get("foo", function (err, reply) {
-                    var c = reply;
+                    console.log(reply);
                 });
                 client.publish("events.123.new", '{"some": "data"}');
             }
