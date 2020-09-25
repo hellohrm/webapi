@@ -17,7 +17,31 @@ module.exports = function (app) {
 
     // Server frontpage
     app.route('/').get(function (req, res) {
+
+        var redis = require('redis');
+        var client = redis.createClient(6379 , 'centos7.hellohrm.cf', { no_ready_check: true });
+        client.auth('foobared@centos7', function (err) {
+            if (!err) {
+                client.get("foo", function (err, reply) {
+                    var c = reply;
+                });
+                client.publish("events.123.new", '{"some": "data"}');
+            }
+        });
+
+        client.on('error', function (err) {
+            console.log('Error ' + err);
+        });
+
+        client.on('connect', function () {
+            console.log('Connected to Redis');
+        });
+
+
         res.send('This is TestBot Server');
+        //res.writeHead(301,
+        //    { Location: 'http://192.168.1.91:10996/localsrc/ping.php?XDEBUG_SESSION_START=154A5348' }////'http://192.168.1.91:10996/pages/invoice.html'
+        //);
         res.end();
     });
 

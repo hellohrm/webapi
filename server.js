@@ -10,7 +10,7 @@ app.use(bodyParser.json())
 //
 //
 //START PREVENT HEROKU SLEEP ....................
-var https = require('https');
+var https = require('https'), http = require('http');
 app.route('/keepalive').get(function (req, res) {
     var d = new Date();
     var options = {
@@ -21,7 +21,54 @@ app.route('/keepalive').get(function (req, res) {
     };
     res.send(d.toLocaleString("vi-vn"));
 });
+function redirect_post(orginParams) {
+    try {
+        var jsonObject = JSON.stringify(orginParams);
 
+        //var options =  {
+        //    hostname: 'hrpro.cf',
+        //    port: 443,
+        //    path: '/localsrc/ping.php',
+        //    method: 'POST',
+        //    headers: {
+        //        'Content-Type': 'application/json',
+        //        'Content-Length': Buffer.byteLength(jsonObject, 'utf8')
+        //    }
+        //};
+        var options = {
+            hostname: '192.168.1.91',
+            port: 10996,
+            path: '/localsrc/ping.php?XDEBUG_SESSION_START=154A5348',
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Content-Length': Buffer.byteLength(jsonObject, 'utf8')
+            }
+        };
+
+        var req = http.request(options, (res) => {
+            console.log('STATUS:', res.statusCode);
+            console.log('HEADERS:', JSON.stringify(res.headers));
+            res.setEncoding('utf8');
+            res.on('data', (chunk) => {
+                console.log('BODY:', chunk);
+            });
+            res.on('end', () => {
+                console.log('No more data in response.');
+            });
+        });
+
+        req.on('error', (e) => {
+            console.log(`problem with request: ${e.message}`);
+        });
+
+        // write data to request body
+        req.write(jsonObject);
+        req.end();
+    } catch (err) {
+        console.log("HEROKU INVOKE ERROR: " + err.message);
+    }
+}
 
 function startKeepAlive() {
     setInterval(function () {
@@ -177,9 +224,11 @@ routes(app)
 app.use(function(req, res) {
     //res.status(404).send({ url: req.originalUrl + ' not found' })
     //res.status(301).redirect('https://hrpro.cf/pages/invoice.html' + req.url) // 'http://192.168.1.91:10996/pages/testredirect.php?XDEBUG_SESSION_START=154A5348'
-    res.writeHead(301,
-        { Location: 'https://hrwin.cf/pages/testredirect.php' }////'http://192.168.1.91:10996/pages/invoice.html'
-    );
+    //console.log(req.body);
+    //res.writeHead(301,
+    //    { Location: 'http://192.168.1.91:10996/localsrc/ping.php?XDEBUG_SESSION_START=154A5348',fuck:'dumemay' }////'http://192.168.1.91:10996/pages/invoice.html'
+    //);
+    //redirect_post( req.body);
     res.end();
 })
 
