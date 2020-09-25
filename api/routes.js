@@ -19,8 +19,8 @@ module.exports = function (app) {
     app.route('/').get(function (req, res) {
 
         var redis = require('redis');
-        var client = redis.createClient(6379 , 'centos7.hellohrm.cf', { no_ready_check: true });
-        client.auth('foobared@centos7', function (err) {
+        var client = redis.createClient(6379, process.env.REDIS_HOST, { no_ready_check: true });
+        client.auth(process.env.REDIS_PASS, function (err) {
             if (!err) {
                 client.get("foo", function (err, reply) {
                     var c = reply;
