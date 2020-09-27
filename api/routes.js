@@ -17,7 +17,7 @@ module.exports = function (app) {
     app.route('/thai').get(function (req, res) {
 
         const { client, xml } = require('@xmpp/client')
-        const debug = require('@xmpp/debug')
+        //const debug = require('@xmpp/debug')
 
         const xmpp = client({
             service: 'ws://34.121.155.40:5280/ws',
@@ -27,7 +27,7 @@ module.exports = function (app) {
             password: '123',
         })
 
-        debug(xmpp, true)
+        //debug(xmpp, true)
 
         xmpp.on('error', err => {
             console.error(err)
