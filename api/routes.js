@@ -34,12 +34,11 @@ module.exports = function (app) {
         });
 
         //client.set("foo", 'bar');
-        var testredis = 'This is TestBot Server';
         client.get("foo", function (err, reply) {
-            testredis = reply.toString();
+            global.console.log(reply.toString());
         })
 
-        res.send(testredis);
+        res.send('This is TestBot Server');
     });
 
     // Facebook Webhook
