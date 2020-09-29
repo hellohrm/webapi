@@ -14,6 +14,14 @@ module.exports = function (app) {
       .delete(productsCtrl.delete);
 
 
+    // todoList Routes
+    app.route('/health_state').post(function (req, res) {
+        var post_body = req.body;
+        var d = 1;
+        res.send('health_state');
+        req.end();
+    });
+
 
     // Server frontpage
     app.route('/').get(function (req, res) {
