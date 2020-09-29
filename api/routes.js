@@ -19,7 +19,7 @@ module.exports = function (app) {
         var post_body = req.body;
         var d = 1;
         res.send('health_state');
-        req.end();
+        res.end();
     });
 
 
