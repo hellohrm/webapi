@@ -21,7 +21,8 @@
     "mysql": "^2.18.1",
     "request": "^2.87.0",
     "crypto-js": "^4.0.0",
-    "crypto": "^1.0.1"
+    "crypto": "^1.0.1",
+    "redis": "^3.0.2"
   },
   "engines": {
     "node": "8.11.2"

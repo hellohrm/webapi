@@ -17,7 +17,29 @@ module.exports = function (app) {
 
     // Server frontpage
     app.route('/').get(function (req, res) {
-        res.send('This is TestBot Server');
+        var redis = require("redis");
+        const client = redis.createClient({
+            host: '34.121.171.191',
+            port: 6379,
+            no_ready_check: true,
+            auth_pass: 'foobared@centos7',
+        });
+
+        client.on('connect', () => {
+            global.console.log("connected");
+        });
+
+        client.on('error', err => {
+            global.console.log(err.message)
+        });
+
+        //client.set("foo", 'bar');
+        var testredis = 'This is TestBot Server';
+        client.get("foo", function (err, reply) {
+            testredis = reply.toString();
+        })
+
+        res.send(testredis);
     });
 
     // Facebook Webhook
