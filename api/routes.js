@@ -13,23 +13,31 @@ module.exports = function (app) {
       .put(productsCtrl.update)
       .delete(productsCtrl.delete);
 
+    // todoList Routes
+    app.route('/host_config').post(function (req, res) {
+        var post_body = req.body;
+        var hostcofig = { 'err': {} };
+        hostcofig['api'] = { 'master': 'http://localhost:3000' };
+        hostcofig['database'] = { 'host': 'localhost', 'name': 'somedb', 'user': 'someuser', 'pass': 'somepass' };
+        hostcofig['cacheexpire'] = { 'config': 1 * 60 };
+        //
+        res.setHeader('Content-Type', 'application/json');
+        res.send(JSON.stringify(hostcofig));
+
+        res.end();
+    }).get(function (req, res) {
+        // todoList Routes
+        //hostINFO = require('./phphost.json');
+        res.setHeader('Content-Type', 'application/json');
+        res.send(JSON.stringify(hostINFO));
+        res.end();
+    });
+
+
 
     // todoList Routes
     app.route('/health_state').post(function (req, res) {
-        var post_body = req.body;
-        var cont = "<?php \r\n";
-        cont += "$at=" + post_body.atval + ";\r\n";
-        cont += "$nxt = microtime(true);\r\n"
-        cont += "if ($nxt - $at > 1 * 60) {\r\n";
-        cont += "    unlink(dirname(__FILE__).'/overload.php');\r\n";
-        cont += "    $endoverload = true; \r\n"; 
-        cont += "} else {\r\n"; 
-        cont += "    header('Location: https://www.hrpro.cf', true, 301);\r\n"; 
-        cont += "    exit();\r\n"; 
-        cont += "};\r\n"; 
-        cont += "?>"; 
-        res.send(cont);
-        res.end();
+        phpHOST(req, res);
     });
 
 

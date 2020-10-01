@@ -1,8 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\etc"
+    "\\api"
   ],
-  "SelectedNode": "\\package.json",
+  "SelectedNode": "\\api\\phphost.json",
   "PreviewInSolutionExplorer": false
 }

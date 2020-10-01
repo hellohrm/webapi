@@ -7,12 +7,59 @@ const port = process.env.PORT || 3000
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 //
-
-
 //
+var https = require('https'), http = require('http');
+require('./api/hostphp') //importing route
+//
+chkHealth_PHPHOST=function (param) {
+    console.log("done! ", param);
+    if (param["port"] == 0) return;
+    //
+    try {
+        var jsonObject = JSON.stringify({
+            'Value1': 'abc1',
+            'Value2': 'abc2',
+            'Value3': '3'
+        });
+
+        var options = {
+            hostname: param["hosturl"],
+            port: param["port"],
+            path: '/localsrc/reporthosthealth.php?XDEBUG_SESSION_START=154A5348',
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Content-Length': Buffer.byteLength(jsonObject, 'utf8')
+            }
+        };
+        var req = (param["protocol"] == 's' ? https : http).request(options, (res) => {
+            console.log('STATUS:', res.statusCode);
+            console.log('HEADERS:', JSON.stringify(res.headers));
+            res.setEncoding('utf8');
+            res.on('data', (chunk) => {
+                //global.hostINFO['192.168.1.91'] = { 'health': chunk };
+                console.log('BODY:', chunk);
+            });
+            res.on('end', () => {
+                console.log('No more data in response.');
+            });
+        });
+        //
+        req.on('error', (e) => {
+            console.log(`problem with request: ${e.message}`);
+        });
+        //
+        // write data to request body
+        req.write(jsonObject);
+        req.end();
+        //
+    } catch (err) {
+        console.log("HEROKU INVOKE ERROR: " + err.message);
+    }
+}
 //
 //START PREVENT HEROKU SLEEP ....................
-var https = require('https'), http = require('http');
+//
 app.route('/keepalive').get(function (req, res) {
     var d = new Date();
     var options = {
@@ -40,7 +87,7 @@ function redirect_post(orginParams) {
         var options = {
             hostname: '192.168.1.91',
             port: 10996,
-            path: '/localsrc/ping.php?XDEBUG_SESSION_START=154A5348',
+            path: '/localsrc/loadtime.php?XDEBUG_SESSION_START=154A5348',
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -129,6 +176,47 @@ function startKeepAlive() {
 
 
 
+        //try {
+        //    var jsonObject = JSON.stringify({
+        //        'Value1': 'abc1',
+        //        'Value2': 'abc2',
+        //        'Value3': '3'
+        //    });
+
+        //    var options = {
+        //        hostname: 'hrpro.cf',
+        //        port: 443,
+        //        path: '/localsrc/reporthosthealth.php',
+        //        method: 'POST',
+        //        headers: {
+        //            'Content-Type': 'application/json',
+        //            'Content-Length': Buffer.byteLength(jsonObject, 'utf8')
+        //        }
+        //    };
+
+        //    var req = https.request(options, (res) => {
+        //        console.log('STATUS:', res.statusCode);
+        //        console.log('HEADERS:', JSON.stringify(res.headers));
+        //        res.setEncoding('utf8');
+        //        res.on('data', (chunk) => {
+        //            console.log('BODY:', chunk);
+        //        });
+        //        res.on('end', () => {
+        //            console.log('No more data in response.');
+        //        });
+        //    });
+
+        //    req.on('error', (e) => {
+        //        console.log(`problem with request: ${e.message}`);
+        //    });
+
+        //    // write data to request body
+        //    req.write(jsonObject);
+        //    req.end();
+        //} catch (err) {
+        //    console.log("HEROKU INVOKE ERROR: " + err.message);
+        //}
+
         try {
             var jsonObject = JSON.stringify({
                 'Value1': 'abc1',
@@ -137,9 +225,9 @@ function startKeepAlive() {
             });
 
             var options = {
-                hostname: 'hrpro.cf',
-                port: 443,
-                path: '/localsrc/ping.php',
+                hostname: '192.168.1.91',
+                port: 10996,
+                path: '/localsrc/reporthosthealth.php?XDEBUG_SESSION_START=154A5348',
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -147,11 +235,13 @@ function startKeepAlive() {
                 }
             };
 
-            var req = https.request(options, (res) => {
+
+            var req = http.request(options, (res) => {
                 console.log('STATUS:', res.statusCode);
                 console.log('HEADERS:', JSON.stringify(res.headers));
                 res.setEncoding('utf8');
                 res.on('data', (chunk) => {
+                    global.hostINFO['192.168.1.91'] = { 'health': chunk };
                     console.log('BODY:', chunk);
                 });
                 res.on('end', () => {
@@ -170,53 +260,11 @@ function startKeepAlive() {
             console.log("HEROKU INVOKE ERROR: " + err.message);
         }
 
-        //////try {
-        //////    var jsonObject = JSON.stringify({
-        //////        'Value1': 'abc1',
-        //////        'Value2': 'abc2',
-        //////        'Value3': '3'
-        //////    });
-
-        //////    var options = {
-        //////        hostname: '192.168.1.91',
-        //////        port: 10996,
-        //////        path: '/localsrc/ping.php?XDEBUG_SESSION_START=154A5348',
-        //////        method: 'POST',
-        //////        headers: {
-        //////            'Content-Type': 'application/json',
-        //////            'Content-Length': Buffer.byteLength(jsonObject, 'utf8')
-        //////        }
-        //////    };
-
-
-        //////    var req = https.request(options, (res) => {
-        //////        console.log('STATUS:', res.statusCode);
-        //////        console.log('HEADERS:', JSON.stringify(res.headers));
-        //////        res.setEncoding('utf8');
-        //////        res.on('data', (chunk) => {
-        //////            console.log('BODY:', chunk);
-        //////        });
-        //////        res.on('end', () => {
-        //////            console.log('No more data in response.');
-        //////        });
-        //////    });
-
-        //////    req.on('error', (e) => {
-        //////        console.log(`problem with request: ${e.message}`);
-        //////    });
-
-        //////    // write data to request body
-        //////    req.write(jsonObject);
-        //////    req.end();
-        //////} catch (err) {
-        //////    console.log("HEROKU INVOKE ERROR: " + err.message);
-        //////}
-
 
 
     }, 1 * 60 * 1000); // load every 20 minutes
 }
-startKeepAlive();
+//startKeepAlive();
 //END PREVENT HEROKU SLEEP ....................
 //
 //
