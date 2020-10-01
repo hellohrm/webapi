@@ -1,5 +1,5 @@
 {
   "192.168.1.91": {"port": 10996,"protocol": "", "health": 0 },
-  "hrpro.cf": {"port": 433,"protocol": "s", "health": 0 },
-  "www.hrpro.cf": {"port": 433,"protocol": "s", "health": 0 }
+  "hrpro.cf": {"port": 443,"protocol": "s", "health": 0 },
+  "www.hrpro.cf": {"port": 443,"protocol": "s", "health": 0 }
 }
