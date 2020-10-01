@@ -21,7 +21,6 @@ function hostOverload(req, res) {
     res.end();
 }
 
-
 var my_queue = [], my_active = false,my_check = function () {
     if (!my_active && my_queue.length > 0) {
         var f = my_queue.shift();

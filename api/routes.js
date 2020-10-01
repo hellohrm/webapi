@@ -44,12 +44,8 @@ module.exports = function (app) {
     // Server frontpage
     app.route('/').get(function (req, res) {
         var redis = require("redis");
-        const client = redis.createClient({
-            host: '34.121.171.191',
-            port: 6379,
-            no_ready_check: true,
-            auth_pass: 'foobared@centos7',
-        });
+        var redisSVR = process.env.REDIS_SVR && JSON.parse(process.env.REDIS_SVR) || require('./redisinfo.json');
+        const client = redis.createClient(Object.assign({ "port": 6379, "no_ready_check": true }, redisSVR));
 
         client.on('connect', () => {
             global.console.log("connected");
