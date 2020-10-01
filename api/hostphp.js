@@ -1,4 +1,4 @@
-hostINFO = require('./phphost.json');//bien public ko co var delarce
+hostINFO = process.env.PHP_HOST_CHK_HEALTH_JSON && JSON.parse( process.env.PHP_HOST_CHK_HEALTH_JSON) || require('./phphost.json');//bien public ko co var delarce
 phpHOST = function (req, res) {
     var post_body = req.body;
     hostOverload(req, res);

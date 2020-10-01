@@ -13,7 +13,7 @@ require('./api/hostphp') //importing route
 //
 chkHealth_PHPHOST=function (param) {
     console.log("done! ", param);
-    if (param["port"] == 0) return;
+    if (param["p"] == 0) return;
     //
     try {
         var jsonObject = JSON.stringify({
@@ -24,7 +24,7 @@ chkHealth_PHPHOST=function (param) {
 
         var options = {
             hostname: param["hosturl"],
-            port: param["port"],
+            port: param["p"],
             path: '/localsrc/reporthosthealth.php?XDEBUG_SESSION_START=154A5348',
             method: 'POST',
             headers: {
@@ -32,7 +32,7 @@ chkHealth_PHPHOST=function (param) {
                 'Content-Length': Buffer.byteLength(jsonObject, 'utf8')
             }
         };
-        var req = (param["protocol"] == 's' ? https : http).request(options, (res) => {
+        var req = (param["pc"] == 's' ? https : http).request(options, (res) => {
             console.log('STATUS:', res.statusCode);
             console.log('HEADERS:', JSON.stringify(res.headers));
             res.setEncoding('utf8');
