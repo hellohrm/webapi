@@ -4,9 +4,9 @@ const bodyParser = require('body-parser')
 require('dotenv').load()
 const port = process.env.PORT || 3000
 
+
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
-//
 //
 var https = require('https'), http = require('http');
 require('./api/hostphp') //importing route
@@ -272,11 +272,9 @@ let routes = require('./api/routes') //importing route
 routes(app)
 
 
-
-
-
-
-
+//let IOsocket = require('./api/socketio') //importing route
+////app.use(express.static("public"));// Static files
+//IOsocket(app, port);
 
 
 
@@ -292,6 +290,18 @@ app.use(function(req, res) {
     res.end();
 })
 
-app.listen(port)
+//app.listen(port)
+
+const socket = require("socket.io");
+const server = app.listen(port, function () {
+    console.log(`Listening on port ${port}`);
+    console.log(`http://localhost:${port}`);
+});
+// Socket setup
+const io = socket(server);
+io.on("connection", function (socket) {
+    console.log("Made socket connection");
+});
+
 
 console.log('RESTful API server started on: ' + port)
