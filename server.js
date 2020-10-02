@@ -12,12 +12,12 @@ var https = require('https'), http = require('http');
 require('./api/hostphp') //importing route
 //
 chkHealth_PHPHOST=function (param) {
-    console.log("done! ", param);
+    //console.log("done! ", param);
     if (param["p"] == 0) return;
     //
     try {
         var jsonObject = JSON.stringify({
-            'Value1': 'abc1',
+            'HANDSHARKE_KEY': process.env.HANDSHARKE_KEY||'abc1',
             'Value2': 'abc2',
             'Value3': '3'
         });
@@ -33,8 +33,8 @@ chkHealth_PHPHOST=function (param) {
             }
         };
         var req = (param["pc"] == 's' ? https : http).request(options, (res) => {
-            console.log('STATUS:', res.statusCode);
-            console.log('HEADERS:', JSON.stringify(res.headers));
+            //console.log('STATUS:', res.statusCode);
+            //console.log('HEADERS:', JSON.stringify(res.headers));
             res.setEncoding('utf8');
             res.on('data', (chunk) => {
                 //global.hostINFO['192.168.1.91'] = { 'health': chunk };
