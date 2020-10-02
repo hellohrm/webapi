@@ -38,7 +38,8 @@ chkHealth_PHPHOST=function (param) {
             res.setEncoding('utf8');
             res.on('data', (chunk) => {
                 //global.hostINFO['192.168.1.91'] = { 'health': chunk };
-                console.log('BODY:', chunk);
+                setTimeout(function () { testsend(chunk); }, 1);
+                //console.log('BODY:', chunk);
             });
             res.on('end', () => {
                 console.log('No more data in response.');
@@ -279,7 +280,8 @@ routes(app)
 
 
 
-app.use(function(req, res) {
+app.use(function (req, res) {
+
     //res.status(404).send({ url: req.originalUrl + ' not found' })
     //res.status(301).redirect('https://hrpro.cf/pages/invoice.html' + req.url) // 'http://192.168.1.91:10996/pages/testredirect.php?XDEBUG_SESSION_START=154A5348'
     //console.log(req.body);
@@ -301,7 +303,10 @@ const server = app.listen(port, function () {
 const io = socket(server);
 io.on("connection", function (socket) {
     console.log("Made socket connection");
+    socket.emit('announcements', { message: 'A new user has joined!' });
 });
-
+function testsend(data) {
+    io.emit('announcements', { message: data });
+}
 
 console.log('RESTful API server started on: ' + port)

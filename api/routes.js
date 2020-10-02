@@ -28,9 +28,12 @@ module.exports = function (app) {
     }).get(function (req, res) {
         // todoList Routes
         //hostINFO = require('./phphost.json');
-        res.setHeader('Content-Type', 'application/json');
-        res.send(JSON.stringify(hostINFO));
-        res.end();
+        //res.setHeader('Content-Type', 'application/json');
+        //res.send(JSON.stringify(hostINFO));
+        //res.end();
+        var path = require("path") //assuming express is installed 
+        res.sendFile(path.join(__dirname + '/../public/index.html'));
+        res.end;
     });
 
 

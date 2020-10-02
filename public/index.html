@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Socket.io simple chat</title>
+</head>
+<body>
+    <div class="container">
+        <div class="inbox">
+            <div class="inbox__people">
+                <h4>Active users</h4>
+            </div>
+            <div class="inbox__messages">
+                <div class="messages__history"></div>
+                <div class="fallback"></div>
+            </div>
+        </div>
+
+        <form class="message_form">
+            <input type="text" class="message_form__input" placeholder="Type a message" />
+            <button class="message_form__button" type="submit">
+                Enter
+            </button>
+        </form>
+        <table id='log'></table>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.1/socket.io.js"></script>
+    <script>
+        const socket = io('/');
+        socket.on('announcements', function (data) {
+            log('Got announcement:', data.message);
+        });
+        function log(msg, data) {
+            var tr = document.createElement('tr');
+            var th = document.createElement('th');
+            th.setAttribute("style", "text-align: left; vertical-align: top;");
+            var td;
+
+            th.appendChild(document.createTextNode(msg));
+            tr.appendChild(th);
+
+            if (data) {
+                td = document.createElement('td');
+                pre = document.createElement('code');
+                pre.setAttribute("style", "white-space: pre-wrap;");
+                td.appendChild(pre);
+                pre.appendChild(document.createTextNode(data));
+                tr.appendChild(td);
+            } else {
+                th.setAttribute('colspan', '2');
+            };
+            document.getElementById('log').appendChild(tr);
+        }
+
+    </script>
+</body>
+</html>
+
