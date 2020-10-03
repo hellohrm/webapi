@@ -297,7 +297,6 @@ app.use(function (req, res) {
 //app.engine('html', require('ejs').renderFile);
 //app.set('view engine', 'html');
 app.set('view engine', 'ejs');
-///app.engine('ejs', require('ejs').__express);
 //
 const socket = require("socket.io");
 const server = app.listen(port, function () {
