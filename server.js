@@ -294,9 +294,9 @@ app.use(function (req, res) {
 
 //app.listen(port)
 
-//app.engine('html', require('ejs').renderFile);
-//app.set('view engine', 'html');
-app.set('view engine', 'ejs');
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'html');
+//app.set('view engine', 'ejs');
 //app.engine('ejs', require('ejs').__express);
 //
 const socket = require("socket.io");

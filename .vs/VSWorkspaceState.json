@@ -2,10 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\etc",
-    "\\views",
-    "\\views\\pages",
     "\\views\\partials"
   ],
-  "SelectedNode": "\\views\\pages\\about.ejs",
+  "SelectedNode": "\\views",
   "PreviewInSolutionExplorer": false
 }

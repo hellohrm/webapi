@@ -1,0 +1,22 @@
+<!-- start: ClipTwo JAVASCRIPTS -->
+<script src="assets/js/main.min.js"></script>
+<script>
+    // -- start: NProgress --
+    NProgress.configure({
+        showSpinner: false
+    });
+    NProgress.start();
+    NProgress.set(0.4);
+    var interval = setInterval(function () {
+        NProgress.inc();
+    }, 1000);
+    // -- end: NProgress --
+    jQuery(document).ready(function () {
+        // -- start: NProgress --
+        NProgress.done();
+        clearInterval(interval);
+        // -- end: NProgress --
+        Main.init();
+    });
+</script>
+<!-- end: ClipTwo JAVASCRIPTS -->

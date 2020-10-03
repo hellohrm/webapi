@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<!-- Template Name: ClipTwo - Responsive Admin Template build with Bootstrap 4.x | Author: ClipTheme -->
+<!--[if IE 8]><html class="ie8" lang="en"><![endif]-->
+<!--[if IE 9]><html class="ie9" lang="en"><![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- start: HEAD -->
+<head>
+    <script type="text/javascript">
+        var fucksrc ='//hrm.dnd.vn/media';
+    </script>
+    <!-- start: GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,400italic,600,700|Raleway:100,300,400,500,600,700|Crete+Round:400italic"
+          rel="stylesheet" type="text/css" />
+    <!-- end: GOOGLE FONTS -->
+    <!-- start: MAIN CSS -->
+    <link rel="stylesheet" href="//hrm.dnd.vn/media/css/vendors.bundle.min.css">
+    <!-- end: MAIN CSS -->
+    <!-- start: ClipTwo CSS -->
+    <link rel="stylesheet" href="//hrm.dnd.vn/media/css/theme.bundle.min.css">
+    <link rel="stylesheet" href="//hrm.dnd.vn/media/css/themes/theme-2.min.css" id="skin_color" />
+
+    <link rel="stylesheet" href="//hrm.dnd.vn/media/vendor/chrome-tabs/demo/css/demo.css" />
+    <link rel="stylesheet" href="//hrm.dnd.vn/media/vendor/chrome-tabs/css/chrome-tabs.css" />
+    <link rel="stylesheet" href="//hrm.dnd.vn/media/vendor/chrome-tabs/css/chrome-tabs-dark-theme.css" />
+
+    <!-- end: ClipTwo CSS -->
+    <!-- partial:partials/head/_meta.html -->
+    <!-- partial -->
+    <!-- partial:partials/head/_main_css.html -->
+    <!-- partial -->
+    <!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
+    <!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
+    <!--<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>-->
+</head>
+<!-- end: HEAD -->
+
+<body>
+    <div id="app">
+        <%- include('partials/_shared/_top-navbar.html'); %>
+
+        <!-- sidebar -->
+        <div class="sidebar app-aside" id="sidebar">
+            <div class="sidebar-container perfect-scrollbar">
+                <nav>
+                    <!-- start: SEARCH FORM -->
+                    <!-- end: SEARCH FORM -->
+                    <!-- start: MAIN NAVIGATION MENU -->
+                    <ul class="main-navigation-menu" style="margin:0px">
+                        <li>
+                            <a href="index.html">
+                                <div class="item-content">
+                                    <div class="item-media">
+                                        <i class="ti-home"></i>
+                                    </div>
+                                    <div class="item-inner">
+                                        <span class="title"> Dashboard </span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="pages_calendar.html">
+                                <div class="item-content">
+                                    <div class="item-media">
+                                        <span class="fa-stack">
+                                            <i class="fa fa-square fa-stack-2x"></i>
+                                            <i class="fa fa-terminal fa-stack-1x fa-inverse"></i>
+                                        </span>
+                                    </div>
+                                    <div class="item-inner">
+                                        <span class="title"> Calendar </span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="pages_messages.html">
+                                <div class="item-content">
+                                    <div class="item-media">
+                                        <span class="fa-stack">
+                                            <i class="fa fa-square fa-stack-2x"></i>
+                                            <i class="fa fa-folder-open-o fa-stack-1x fa-inverse"></i>
+                                        </span>
+                                    </div>
+                                    <div class="item-inner">
+                                        <span class="title"> Messages </span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- end: CORE FEATURES -->
+                    <!-- start: DOCUMENTATION BUTTON -->
+                    <div class="wrapper">
+                        <a href="documentation.html" class="button-o">
+                            <i class="ti-help"></i>
+                            <span>Documentation</span>
+                        </a>
+                    </div>
+                    <!-- end: DOCUMENTATION BUTTON -->
+                </nav>
+            </div>
+        </div>
+        <div class="app-content">
+            <header class="navbar navbar-expand-lg navbar-light navbar-static-top">
+
+                <div class="navbar-header">
+                    <a href="#" class="sidebar-mobile-toggler float-left d-lg-none" class="btn btn-navbar sidebar-toggle" data-toggle-class="app-slide-off" data-toggle-target="#app" data-toggle-click-outside="#sidebar">
+                        <i class="ti-align-justify"></i>
+                    </a>
+                    <a class="navbar-brand" href="index.html">
+                        <img src="//hrm.dnd.vn/media/images/logo2.png" alt="ClipTwo" />
+                    </a>
+                    <a href="#" class="sidebar-toggler float-right d-none d-lg-block d-xl-block" data-toggle-class="app-sidebar-closed" data-toggle-target="#app">
+                        <i class="ti-align-justify"></i>
+                    </a>
+                </div>
+                <div class="container-navbar-right">
+                    <ul class="navbar-right">
+                        <li class="dropdown">
+                            <a href="javascript:void(0)" data-parent-tab="#offTab" data-tab="#off-users" class="dropdown-toggle" data-toggle-class="app-offsidebar-open" data-toggle-target="#app" data-toggle-click-outside="#off-sidebar">
+                                <span class="dot-badge partition-red animated infinite pulse"></span>
+                                <i class="ti-comment animated bounce"></i>
+                                <span class="d-none d-md-block d-lg-block d-xl-block">MESSAGES</span>
+                            </a>
+                        </li>
+                        <li class="dropdown">
+                            <a href class="dropdown-toggle" data-parent-tab="#offTab" data-tab="#off-activities" class="dropdown-toggle" data-toggle-class="app-offsidebar-open" data-toggle-target="#app" data-toggle-click-outside="#off-sidebar">
+                                <i class="ti-check-box"></i>
+                                <span class="d-none d-md-block d-lg-block d-xl-block">ACTIVITIES</span>
+                            </a>
+                        </li>
+                        <li class="dropdown">
+                            <a href class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="ti-world"></i>
+                                <span class="d-none d-md-block d-lg-block d-xl-block">English</span>
+                            </a>
+                            <div role="menu" class="dropdown-menu dropdown-menu-right dropdown-light">
+                                <a href="#" class="dropdown-item">Deutsch </a>
+                                <a href="#" class="dropdown-item">English </a>
+                                <a href="#" class="dropdown-item">Italiano</a>
+                            </div>
+                        </li>
+                        <li class="dropdown current-user d-none d-md-block d-lg-block d-xl-block">
+                            <a href class="dropdown-toggle" data-toggle="dropdown">
+                                <img src="//hrm.dnd.vn/media/images/avatar-1.jpg" alt="Peter" />
+                                <span class="username">
+                                    Peter
+                                    <i class="ti-angle-down"></i>
+                                </span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-right dropdown-dark">
+                                <li>
+                                    <a href="pages_user_profile.html">My Profile</a>
+                                </li>
+                                <li>
+                                    <a href="pages_calendar.html">My Calendar</a>
+                                </li>
+                                <li>
+                                    <a hef="pages_messages.html">My Messages (3)</a>
+                                </li>
+                                <li>
+                                    <a href="login_lockscreen.html">Lock Screen</a>
+                                </li>
+                                <li>
+                                    <a href="login_signin.html">Log Out</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <a class="dropdown-off-sidebar sidebar-mobile-toggler d-md-block d-lg-block" data-toggle-class="app-offsidebar-open" data-toggle-target="#app" data-toggle-click-outside="#off-sidebar"></a> &nbsp;
+                <a class="dropdown-off-sidebar d-none d-sm-block" data-toggle-class="app-offsidebar-open" data-toggle-target="#app" data-toggle-click-outside="#off-sidebar">&nbsp;</a>
+
+            </header>
+
+
+            <div class="main-content">
+                <div class="toikhoqua">
+                    <div class="chrome-tabs" style="--tab-content-margin: 9px">
+                        <div class="chrome-tabs-content">
+                            <div class="chrome-tab">
+                                <div class="chrome-tab-dividers"></div>
+                                <div class="chrome-tab-background">
+                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+                                        <defs>
+                                            <symbol id="chrome-tab-geometry-left" viewbox="0 0 214 36">
+                                                <path d="M17 0h197v36H0v-2c4.5 0 9-3.5 9-8V8c0-4.5 3.5-8 8-8z"></path>
+                                            </symbol>
+                                            <symbol id="chrome-tab-geometry-right" viewbox="0 0 214 36">
+                                                <use xlink:href="#chrome-tab-geometry-left"></use>
+                                            </symbol>
+                                            <clippath id="crop">
+                                                <rect class="mask" width="100%" height="100%" x="0"></rect>
+                                            </clippath>
+                                        </defs>
+                                        <svg width="52%" height="100%">
+                                            <use xlink:href="#chrome-tab-geometry-left" width="214" height="36" class="chrome-tab-geometry"></use>
+                                        </svg>
+                                        <g transform="scale(-1, 1)">
+                                            <svg width="52%" height="100%" x="-100%" y="0">
+                                                <use xlink:href="#chrome-tab-geometry-right" width="214" height="36" class="chrome-tab-geometry"></use>
+                                            </svg>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <div class="chrome-tab-content">
+                                    <div class="chrome-tab-favicon" style="background-image: url('//hrm.dnd.vn/media/vendor/chrome-tabs/demo/images/google-favicon.ico')"></div>
+                                    <div class="chrome-tab-title">Google</div>
+                                    <div class="chrome-tab-drag-handle"></div>
+                                    <div class="chrome-tab-close"></div>
+                                </div>
+                            </div>
+                            <div class="chrome-tab" active>
+                                <div class="chrome-tab-dividers"></div>
+                                <div class="chrome-tab-background">
+                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+                                        <defs>
+                                            <symbol id="chrome-tab-geometry-left" viewbox="0 0 214 36">
+                                                <path d="M17 0h197v36H0v-2c4.5 0 9-3.5 9-8V8c0-4.5 3.5-8 8-8z"></path>
+                                            </symbol>
+                                            <symbol id="chrome-tab-geometry-right" viewbox="0 0 214 36">
+                                                <use xlink:href="#chrome-tab-geometry-left"></use>
+                                            </symbol>
+                                            <clippath id="crop">
+                                                <rect class="mask" width="100%" height="100%" x="0"></rect>
+                                            </clippath>
+                                        </defs>
+                                        <svg width="52%" height="100%">
+                                            <use xlink:href="#chrome-tab-geometry-left" width="214" height="36" class="chrome-tab-geometry"></use>
+                                        </svg>
+                                        <g transform="scale(-1, 1)">
+                                            <svg width="52%" height="100%" x="-100%" y="0">
+                                                <use xlink:href="#chrome-tab-geometry-right" width="214" height="36" class="chrome-tab-geometry"></use>
+                                            </svg>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <div class="chrome-tab-content">
+                                    <div class="chrome-tab-favicon" style="background-image: url('//hrm.dnd.vn/media/vendor/chrome-tabs/demo/images/facebook-favicon.ico')"></div>
+                                    <div class="chrome-tab-title">Facebook Facebook Facebook Facebook</div>
+                                    <div class="chrome-tab-drag-handle"></div>
+                                    <div class="chrome-tab-close"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chrome-tabs-bottom-bar"></div>
+
+                </div>
+                <div class="wrap-content container" id="container">
+                    <section id="page-title">
+                        <div class="row">
+
+                            <div class="surface" style="height:500px">
+                                <div class="mock-browser">
+
+                                    <div class="chrome-tabs-optional-shadow-below-bottom-bar"></div>
+                                    <div class="mock-browser-content">
+                                        <div class="buttons">
+                                            <button data-theme-toggle>Toggle dark theme</button>
+                                            <button data-add-tab>Add new tab</button>
+                                            <button data-add-background-tab>Add tab in the background</button>
+                                            <button data-remove-tab>Remove active tab</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <style>
+                                    .made-by {
+                                        margin-top: auto;
+                                        --active-background-color: #dee1e6;
+                                        color: #848890;
+                                        font-size: 14px;
+                                        font-family: Avenir, "Avenir Next", "Segoe UI", Arial, "Helvetica Neue", Helvetica, sans-serif;
+                                        text-align: center;
+                                        -webkit-font-smoothing: antialiased;
+                                        font-weight: bold;
+                                    }
+
+                                    html.dark-theme .made-by {
+                                        --active-background-color: #242628;
+                                        color: #838488;
+                                    }
+
+                                    .made-by-link {
+                                        color: inherit;
+                                        text-decoration: none;
+                                        display: inline-block;
+                                        padding: 1em;
+                                        border-radius: .5em;
+                                    }
+
+                                        .made-by-link:hover:not(:active) {
+                                            opacity: .7;
+                                        }
+
+                                        .made-by-link:hover:active {
+                                            background: var(--active-background-color);
+                                        }
+
+                                    .made-by-logo {
+                                        display: block;
+                                        height: 3.5em;
+                                        width: 7em;
+                                        margin: 0 auto .75em;
+                                    }
+                                </style>
+
+
+                            </div>
+
+
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <!-- / sidebar -->
+        <!-- partial:partials/_shared/_footer.html -->
+        <%- include('partials/_shared/_footer.html'); %>
+        <!-- partial -->
+        <!-- partial:partials/_shared/_off-sidebar.html -->
+        <%- include('partials/_shared/_off-sidebar.html'); %>
+        <!-- partial -->
+        <!-- partial:partials/_shared/_setting.html -->
+        <!-- partial -->
+    </div>
+    <!-- start: JAVASCRIPTS -->
+    <!-- partial:partials/script/_main_vendor.html -->
+    <script src="//hrm.dnd.vn/media/js/vendors.bundle.min.js"></script>
+    <!-- partial -->
+    <!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+    <!--<script src="vendor/chart.js/dist/Chart.min.js"></script>
+    <script src="vendor/jquery.sparkline/jquery.sparkline.min.js"></script>-->
+    <!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+    <!-- partial:partials/script/_main_script.html -->
+    <!-- partial -->
+    <!-- start: JavaScript Event Handlers for this page -->
+    <script src="//hrm.dnd.vn/media/js/main.js"></script>
+    <script>
+        // -- start: NProgress --
+        NProgress.configure({
+            showSpinner: false
+        });
+        NProgress.start();
+        NProgress.set(0.4);
+        var interval = setInterval(function () {
+            NProgress.inc();
+        }, 1000);
+        // -- end: NProgress --
+        jQuery(document).ready(function () {
+            // -- start: NProgress --
+            NProgress.done();
+            clearInterval(interval);
+            // -- end: NProgress --
+            Main.init();
+        });
+    </script>
+    <!-- end: JavaScript Event Handlers for this page -->
+    <!-- end: JAVASCRIPTS -->
+
+    <script type="text/javascript">
+          if (typeof Object.assign != 'function') {
+              // Must be writable: true, enumerable: false, configurable: true
+              Object.defineProperty(Object, "assign", {
+                  value: function assign(target, varArgs) { // .length of function is 2
+                      'use strict';
+                      if (target == null) { // TypeError if undefined or null
+                          throw new TypeError('Cannot convert undefined or null to object');
+                      }
+
+                      var to = Object(target);
+
+                      for (var index = 1; index < arguments.length; index++) {
+                          var nextSource = arguments[index];
+
+                          if (nextSource != null) { // Skip over if undefined or null
+                              for (var nextKey in nextSource) {
+                                  // Avoid bugs when hasOwnProperty is shadowed
+                                  if (Object.prototype.hasOwnProperty.call(nextSource, nextKey)) {
+                                      to[nextKey] = nextSource[nextKey];
+                                  }
+                              }
+                          }
+                      }
+                      return to;
+                  },
+                  writable: true,
+                  configurable: true
+              });
+          }
+    </script>
+
+
+
+
+    <!--<script src="//hrm.dnd.vn/media/vendor/chrome-tabs/js/draggabilly.pkgd.js"></script>-->
+    <script src="//hrm.dnd.vn/media/vendor/chrome-tabs/js/chrome-tabs.js"></script>
+
+    <!-- Styles to prevent flash after JS initialization -->
+    <style type="text/css">
+        .app-navbar-fixed .toikhoqua {
+            position: fixed;
+            top: 65px;
+            z-index: 2000;
+            width: 100%;
+        }
+        @media (max-width: 999px) {
+            .toikhoqua {
+                position: fixed;
+                top: 65px;
+                z-index: 2000;
+                width: 100%;
+            }
+            .main-content {
+                top:50px!important;
+            }
+        }
+            @media (min-width: 1000px) {
+                .chrome-tabs {
+                    position: absolute;
+                    margin-top: -47px;
+                    z-index: 10000000;
+                    width: 500px;
+                    background: none !important;
+                }
+
+
+            }
+
+        .chrome-tabs-bottom-bar {
+            height: 3px;
+            background-color: #fff;
+            margin-top: -4px;
+            position: absolute;
+            z-index: 1990;
+            width: 100%;
+        }
+
+
+
+        /*.ekko-lightbox {
+            display:block!important;
+        }*/
+    </style>
+
+    <script>
+        'use strict';
+        //convert:https://es6console.com/
+
+        var el = document.querySelector('.chrome-tabs');
+        var chromeTabs = new ChromeTabs();
+
+        chromeTabs.init(el,function () {
+            var cb = 1;
+        });
+
+        //el.addEventListener('activeTabChange', ({ detail }) => console.log('Active tab changed', detail.tabEl))
+        //el.addEventListener('tabAdd', ({ detail }) => console.log('Tab added', detail.tabEl))
+        //el.addEventListener('tabRemove', ({ detail }) => console.log('Tab removed', detail.tabEl))
+
+        el.addEventListener('activeTabChange', function (detail) {
+            var c = 0;
+        });
+        el.addEventListener('tabAdd', function (detail) {
+            var c = 0;
+        });
+        el.addEventListener('tabRemove', function (detail) {
+            var c = 0;
+        });
+
+        document.querySelector('button[data-add-tab]').addEventListener('click', function (_) {
+            chromeTabs.addTab({
+                title: 'New Tab',
+                favicon: false
+            });
+        });
+
+        document.querySelector('button[data-add-background-tab]').addEventListener('click', function (_) {
+            chromeTabs.addTab({
+                title: 'New Tab',
+                favicon: false
+            }, {
+                background: true
+            });
+        });
+
+        document.querySelector('button[data-remove-tab]').addEventListener('click', function (_) {
+            chromeTabs.removeTab(chromeTabs.activeTabEl);
+        });
+
+        document.querySelector('button[data-theme-toggle]').addEventListener('click', function (_) {
+            if (el.classList.contains('chrome-tabs-dark-theme')) {
+                document.documentElement.classList.remove('dark-theme');
+                el.classList.remove('chrome-tabs-dark-theme');
+            } else {
+                document.documentElement.classList.add('dark-theme');
+                el.classList.add('chrome-tabs-dark-theme');
+            }
+        });
+
+        window.addEventListener('keydown', function (event) {
+            if (event.ctrlKey && event.key === 't') {
+                chromeTabs.addTab({
+                    title: 'New Tab',
+                    favicon: false
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

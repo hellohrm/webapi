@@ -29,7 +29,7 @@
         <table id='log'></table>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.1/socket.io.js"></script>
-    <script>
+    <script type="text/javascript">
         const socket = io('/');
         socket.on('announcements', function (data) {
             log('Got announcement:', data.message);
