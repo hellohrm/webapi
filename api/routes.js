@@ -4,14 +4,14 @@ module.exports = function (app) {
 
     // todoList Routes
     app.route('/products')
-      .get(productsCtrl.get)
-      .post(productsCtrl.store);
+        .get(productsCtrl.get)
+        .post(productsCtrl.store);
 
 
     app.route('/products/:productId')
-      .get(productsCtrl.detail)
-      .put(productsCtrl.update)
-      .delete(productsCtrl.delete);
+        .get(productsCtrl.detail)
+        .put(productsCtrl.update)
+        .delete(productsCtrl.delete);
 
     // todoList Routes
     app.route('/host_config').post(function (req, res) {
@@ -34,11 +34,19 @@ module.exports = function (app) {
         //var path = require("path") //assuming express is installed 
         //res.sendFile(path.join(__dirname + '/../public/admin.html'));
         //res.render(path.join(__dirname + '/../views/pages/index.ejs'));
-        res.render('../views/pages/index.ejs');
+        var mascots = [
+            { name: 'Sammy', organization: "DigitalOcean", birth_year: 2012 },
+            { name: 'Tux', organization: "Linux", birth_year: 1996 },
+            { name: 'Moby Dock', organization: "Docker", birth_year: 2013 }
+        ];
+        var tagline = "No programming concept is complete without a cute animal mascot.";
+
+        res.render('../views/pages/index.ejs', {
+            mascots: mascots,
+            tagline: tagline
+        });
         res.end;
     });
-
-
 
     // todoList Routes
     app.route('/health_state').post(function (req, res) {
