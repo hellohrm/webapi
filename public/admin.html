@@ -1,0 +1,2120 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ClipTwo - Responsive Admin Template</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1,maximum-scale=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta content="ClipTwo - Responsive Admin Template build with Bootstrap" name="description" />
+    <meta content="ClipTheme" name="author" />
+    <link rel="apple-touch-icon" sizes="57x57" href="//hrm.dnd.vn/media/images/apple-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="//hrm.dnd.vn/media/images/apple-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="//hrm.dnd.vn/media/images/apple-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="//hrm.dnd.vn/media/images/apple-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="//hrm.dnd.vn/media/images/apple-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="//hrm.dnd.vn/media/images/apple-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="//hrm.dnd.vn/media/images/apple-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="//hrm.dnd.vn/media/images/apple-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="//hrm.dnd.vn/media/images/apple-icon-180x180.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="//hrm.dnd.vn/media/images/android-icon-192x192.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="//hrm.dnd.vn/media/images/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="//hrm.dnd.vn/media/images/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="//hrm.dnd.vn/media/images/favicon-16x16.png" />
+    <!--<link rel="manifest" href="//hrm.dnd.vn/media/images/manifest.json" />-->
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="//hrm.dnd.vn/media/images/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,400italic,600,700|Raleway:100,300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
+
+    <!--<link rel="stylesheet" href="//hrm.dnd.vn/media/css/styles.min.css" />-->
+    <link rel="stylesheet" href="//hrm.dnd.vn/media/css/vendors.bundle.min.css" />
+    <link rel="stylesheet" href="//hrm.dnd.vn/media/css/theme.bundle.min.css" />
+    <link rel="stylesheet" href="//hrm.dnd.vn/media/css/themes/theme-5.min.css" id="skin_color" />
+
+    <link rel="stylesheet" href="//hrm.dnd.vn/media/vendor/chrome-tabs/demo/css/demo.css" />
+    <link rel="stylesheet" href="//hrm.dnd.vn/media/vendor/chrome-tabs/css/chrome-tabs.css" />
+    <link rel="stylesheet" href="//hrm.dnd.vn/media/vendor/chrome-tabs/css/chrome-tabs-dark-theme.css" />
+
+    <script>
+        var fucksrc ='//hrm.dnd.vn/media';
+        //-prevent form resubmission when page is refreshed (F5 / CTRL+R)
+        if ( window.history.replaceState ) {
+            window.history.replaceState( null, null, window.location.href );
+        }
+    </script>
+
+    <script src="https://hrm.dnd.vn/media/vendor/GoJS/release/gofuck.js"></script><!---->
+
+</head>
+<body>
+    <div id="app">
+        <div class="sidebar app-aside" id="sidebar">
+            <div class="sidebar-container perfect-scrollbar">
+                <nav>
+                    <div class="search-form">
+                        <a class="s-open" href="#">
+                            <i class="ti-search"></i>
+                        </a>
+                        <form class="navbar-form" role="search">
+                            <a class="s-remove" href="#" target=".navbar-form">
+                                <i class="ti-close"></i>
+                            </a>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search..." />
+                                <button class="btn search-button" type="submit">
+                                    <i class="ti-search"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="navbar-title">
+                        <span>Main Navigation</span>
+                    </div>
+                    <ul class="main-navigation-menu">
+                        <li>
+                            <a href="index.html">
+                                <div class="item-content">
+                                    <div class="item-media">
+                                        <i class="ti-home"></i>
+                                    </div>
+                                    <div class="item-inner">
+                                        <span class="title">Dashboard</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+
+
+                        <li>
+                            <a href="javascript:void(0)">
+                                <div class="item-content">
+                                    <div class="item-media">
+                                        <i class="ti-package"></i>
+                                    </div>
+                                    <div class="item-inner">
+                                        <span class="title">Utilities </span>
+                                        <i class="icon-arrow"></i>
+                                    </div>
+                                </div>
+                            </a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="utilities_search_result.html">
+                                        <span class="title">Search Results</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="utilities_error_404.html">
+                                        <span class="title">Error 404</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="utilities_error_500.html">
+                                        <span class="title">Error 500</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="utilities_pricing_table.html">
+                                        <span class="title">Pricing Table</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <div class="item-content">
+                                    <div class="item-media">
+                                        <i class="ti-folder"></i>
+                                    </div>
+                                    <div class="item-inner">
+                                        <span class="title">3 Level Menu </span>
+                                        <i class="icon-arrow"></i>
+                                    </div>
+                                </div>
+                            </a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="javascript:;">
+                                        <span>Item 1</span>
+                                        <i class="icon-arrow"></i>
+                                    </a>
+                                    <ul class="sub-menu">
+                                        <li>
+                                            <a href="#">Sample Link 1</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Sample Link 2</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Sample Link 3</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <span>Item 2</span>
+                                        <i class="icon-arrow"></i>
+                                    </a>
+                                    <ul class="sub-menu">
+                                        <li>
+                                            <a href="#">Sample Link 1</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Sample Link 2</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Sample Link 3</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <span>Item 3</span>
+                                        <i class="icon-arrow"></i>
+                                    </a>
+                                    <ul class="sub-menu">
+                                        <li>
+                                            <a href="#">Sample Link 1</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Sample Link 2</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Sample Link 3</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                    <div class="navbar-title">
+                        <span>Core Features</span>
+                    </div>
+                    <ul class="folders">
+                        <li>
+                            <a href="pages_calendar.html">
+                                <div class="item-content">
+                                    <div class="item-media">
+                                        <span class="fa-stack">
+                                            <i class="fa fa-square fa-stack-2x"></i>
+                                            <i class="fa fa-terminal fa-stack-1x fa-inverse"></i>
+                                        </span>
+                                    </div>
+                                    <div class="item-inner">
+                                        <span class="title">Calendar</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="pages_messages.html">
+                                <div class="item-content">
+                                    <div class="item-media">
+                                        <span class="fa-stack">
+                                            <i class="fa fa-square fa-stack-2x"></i>
+                                            <i class="fa fa-folder-open-o fa-stack-1x fa-inverse"></i>
+                                        </span>
+                                    </div>
+                                    <div class="item-inner">
+                                        <span class="title">Messages</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="wrapper">
+                        <a href="documentation.html" class="button-o">
+                            <i class="ti-help"></i>
+                            <span>Documentation</span>
+                        </a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="app-content">
+            <header class="navbar navbar-expand-lg navbar-light navbar-static-top">
+
+                <div class="navbar-header">
+                    <a href="#" class="sidebar-mobile-toggler float-left d-lg-none" class="btn btn-navbar sidebar-toggle" data-toggle-class="app-slide-off" data-toggle-target="#app" data-toggle-click-outside="#sidebar">
+                        <i class="ti-align-justify"></i>
+                    </a>
+                    <a class="navbar-brand" href="index.html">
+                        <img src="//hrm.dnd.vn/media/images/logo2.png" alt="ClipTwo" />
+                    </a>
+                    <a href="#" class="sidebar-toggler float-right d-none d-lg-block d-xl-block" data-toggle-class="app-sidebar-closed" data-toggle-target="#app">
+                        <i class="ti-align-justify"></i>
+                    </a>
+                </div>
+                <div class="container-navbar-right">
+                    <ul class="navbar-right">
+                        <li class="dropdown">
+                            <a href="javascript:void(0)" data-parent-tab="#offTab" data-tab="#off-users" class="dropdown-toggle" data-toggle-class="app-offsidebar-open" data-toggle-target="#app" data-toggle-click-outside="#off-sidebar">
+                                <span class="dot-badge partition-red animated infinite pulse"></span>
+                                <i class="ti-comment animated bounce"></i>
+                                <span class="d-none d-md-block d-lg-block d-xl-block">MESSAGES</span>
+                            </a>
+                        </li>
+                        <li class="dropdown">
+                            <a href class="dropdown-toggle" data-parent-tab="#offTab" data-tab="#off-activities" class="dropdown-toggle" data-toggle-class="app-offsidebar-open" data-toggle-target="#app" data-toggle-click-outside="#off-sidebar">
+                                <i class="ti-check-box"></i>
+                                <span class="d-none d-md-block d-lg-block d-xl-block">ACTIVITIES</span>
+                            </a>
+                        </li>
+                        <li class="dropdown">
+                            <a href class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="ti-world"></i>
+                                <span class="d-none d-md-block d-lg-block d-xl-block">English</span>
+                            </a>
+                            <div role="menu" class="dropdown-menu dropdown-menu-right dropdown-light">
+                                <a href="#" class="dropdown-item">Deutsch </a>
+                                <a href="#" class="dropdown-item">English </a>
+                                <a href="#" class="dropdown-item">Italiano</a>
+                            </div>
+                        </li>
+                        <li class="dropdown current-user d-none d-md-block d-lg-block d-xl-block">
+                            <a href class="dropdown-toggle" data-toggle="dropdown">
+                                <img src="//hrm.dnd.vn/media/images/avatar-1.jpg" alt="Peter" />
+                                <span class="username">
+                                    Peter
+                                    <i class="ti-angle-down"></i>
+                                </span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-right dropdown-dark">
+                                <li>
+                                    <a href="pages_user_profile.html">My Profile</a>
+                                </li>
+                                <li>
+                                    <a href="pages_calendar.html">My Calendar</a>
+                                </li>
+                                <li>
+                                    <a hef="pages_messages.html">My Messages (3)</a>
+                                </li>
+                                <li>
+                                    <a href="login_lockscreen.html">Lock Screen</a>
+                                </li>
+                                <li>
+                                    <a href="login_signin.html">Log Out</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <a class="dropdown-off-sidebar sidebar-mobile-toggler d-md-block d-lg-block" data-toggle-class="app-offsidebar-open" data-toggle-target="#app" data-toggle-click-outside="#off-sidebar"></a> &nbsp;
+                <a class="dropdown-off-sidebar d-none d-sm-block" data-toggle-class="app-offsidebar-open" data-toggle-target="#app" data-toggle-click-outside="#off-sidebar">&nbsp;</a>
+
+            </header>
+
+
+            <div class="main-content">
+                <div class="toikhoqua">
+                    <div class="chrome-tabs" style="--tab-content-margin: 9px">
+                        <div class="chrome-tabs-content">
+                            <div class="chrome-tab">
+                                <div class="chrome-tab-dividers"></div>
+                                <div class="chrome-tab-background">
+                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+                                        <defs>
+                                            <symbol id="chrome-tab-geometry-left" viewbox="0 0 214 36">
+                                                <path d="M17 0h197v36H0v-2c4.5 0 9-3.5 9-8V8c0-4.5 3.5-8 8-8z"></path>
+                                            </symbol>
+                                            <symbol id="chrome-tab-geometry-right" viewbox="0 0 214 36">
+                                                <use xlink:href="#chrome-tab-geometry-left"></use>
+                                            </symbol>
+                                            <clippath id="crop">
+                                                <rect class="mask" width="100%" height="100%" x="0"></rect>
+                                            </clippath>
+                                        </defs>
+                                        <svg width="52%" height="100%">
+                                            <use xlink:href="#chrome-tab-geometry-left" width="214" height="36" class="chrome-tab-geometry"></use>
+                                        </svg>
+                                        <g transform="scale(-1, 1)">
+                                            <svg width="52%" height="100%" x="-100%" y="0">
+                                                <use xlink:href="#chrome-tab-geometry-right" width="214" height="36" class="chrome-tab-geometry"></use>
+                                            </svg>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <div class="chrome-tab-content">
+                                    <div class="chrome-tab-favicon" style="background-image: url('//hrm.dnd.vn/media/vendor/chrome-tabs/demo/images/google-favicon.ico')"></div>
+                                    <div class="chrome-tab-title">Google</div>
+                                    <div class="chrome-tab-drag-handle"></div>
+                                    <div class="chrome-tab-close"></div>
+                                </div>
+                            </div>
+                            <div class="chrome-tab" active>
+                                <div class="chrome-tab-dividers"></div>
+                                <div class="chrome-tab-background">
+                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+                                        <defs>
+                                            <symbol id="chrome-tab-geometry-left" viewbox="0 0 214 36">
+                                                <path d="M17 0h197v36H0v-2c4.5 0 9-3.5 9-8V8c0-4.5 3.5-8 8-8z"></path>
+                                            </symbol>
+                                            <symbol id="chrome-tab-geometry-right" viewbox="0 0 214 36">
+                                                <use xlink:href="#chrome-tab-geometry-left"></use>
+                                            </symbol>
+                                            <clippath id="crop">
+                                                <rect class="mask" width="100%" height="100%" x="0"></rect>
+                                            </clippath>
+                                        </defs>
+                                        <svg width="52%" height="100%">
+                                            <use xlink:href="#chrome-tab-geometry-left" width="214" height="36" class="chrome-tab-geometry"></use>
+                                        </svg>
+                                        <g transform="scale(-1, 1)">
+                                            <svg width="52%" height="100%" x="-100%" y="0">
+                                                <use xlink:href="#chrome-tab-geometry-right" width="214" height="36" class="chrome-tab-geometry"></use>
+                                            </svg>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <div class="chrome-tab-content">
+                                    <div class="chrome-tab-favicon" style="background-image: url('//hrm.dnd.vn/media/vendor/chrome-tabs/demo/images/facebook-favicon.ico')"></div>
+                                    <div class="chrome-tab-title">Facebook Facebook Facebook Facebook</div>
+                                    <div class="chrome-tab-drag-handle"></div>
+                                    <div class="chrome-tab-close"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chrome-tabs-bottom-bar"></div>
+
+                </div>
+                <div class="wrap-content container" id="container">
+                    <section id="page-title">
+                        <div class="row">
+                            <div class="col-sm-8">
+                                <h1 class="mainTitle">Starter Page</h1>
+                                <span class="mainDescription">Use this page to start from scratch and put your custom content</span>
+                            </div>
+                            <ol class="breadcrumb">
+                                <li>
+                                    <span>Pages</span>
+                                </li>
+                                <li class="active">
+                                    <span>Blank Page</span>
+                                </li>
+                            </ol>
+                            <div class="col-sm-8">
+                                <a href="javascript:void(0)" onclick="toggle_lightbox(this, event,'https://www.youtube.com/watch?v=k6mFF3VmVAs')" data-width="1280" class="btn btn-info">
+                                    Xem video minh họa
+                                </a>
+                                <button type="button" class="btn btn-secondary" href="javascript:void(0)" onclick="downloadx(this, event, '/dlfiles/hellohrm.zip')" data-width="1280" data-height="600" data-maxheight="700" data-fullh_whenw="700" data-gallery="remoteload" data-disableexternalcheck="true">Dark</button>
+                            </div>
+                            <div class="surface" style="height:500px">
+                                <div class="mock-browser">
+
+                                    <div class="chrome-tabs-optional-shadow-below-bottom-bar"></div>
+                                    <div class="mock-browser-content">
+                                        <div class="buttons">
+                                            <button data-theme-toggle>Toggle dark theme</button>
+                                            <button data-add-tab>Add new tab</button>
+                                            <button data-add-background-tab>Add tab in the background</button>
+                                            <button data-remove-tab>Remove active tab</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <style>
+                                    .made-by {
+                                        margin-top: auto;
+                                        --active-background-color: #dee1e6;
+                                        color: #848890;
+                                        font-size: 14px;
+                                        font-family: Avenir, "Avenir Next", "Segoe UI", Arial, "Helvetica Neue", Helvetica, sans-serif;
+                                        text-align: center;
+                                        -webkit-font-smoothing: antialiased;
+                                        font-weight: bold;
+                                    }
+
+                                    html.dark-theme .made-by {
+                                        --active-background-color: #242628;
+                                        color: #838488;
+                                    }
+
+                                    .made-by-link {
+                                        color: inherit;
+                                        text-decoration: none;
+                                        display: inline-block;
+                                        padding: 1em;
+                                        border-radius: .5em;
+                                    }
+
+                                        .made-by-link:hover:not(:active) {
+                                            opacity: .7;
+                                        }
+
+                                        .made-by-link:hover:active {
+                                            background: var(--active-background-color);
+                                        }
+
+                                    .made-by-logo {
+                                        display: block;
+                                        height: 3.5em;
+                                        width: 7em;
+                                        margin: 0 auto .75em;
+                                    }
+                                </style>
+
+
+                            </div>
+
+                            <!-- start: UI BOOTSTRAP MODALS -->
+                            <div class="container-fluid container-fullw bg-white">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <h5 class="over-title margin-bottom-15">
+                                            Bootstrap
+                                            <span class="text-bold">Modals</span>
+                                        </h5>
+                                        <p>
+                                            Modals are streamlined, but flexible, dialog prompts with the minimum required functionality and smart defaults.
+                                        </p>
+                                        <div class="row">
+                                            <!-- Default Modal -->
+                                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            Modal Content
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-primary btn-o" data-dismiss="modal">
+                                                                Close
+                                                            </button>
+                                                            <button type="button" class="btn btn-primary">
+                                                                Save changes
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- /Default Modal -->
+                                            <div class="col-lg-4 col-sm-6">
+                                                <div class="panel panel-transparent">
+                                                    <div class="panel-heading">
+                                                        <div class="panel-title">
+                                                            Default Modal
+                                                        </div>
+                                                    </div>
+                                                    <div class="panel-body">
+                                                        <p class="margin-bottom-30">
+                                                            Toggle a modal by clicking the button below. It will slide down and fade in from the top of the page.
+                                                        </p>
+                                                        <button class="btn btn-primary btn-o pull-right" data-toggle="modal" data-target="#myModal">
+                                                            Open Deafult Modal
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Large Modal -->
+                                            <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog modal-dialog modal-lg">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            Modal Content
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-primary btn-o" data-dismiss="modal">
+                                                                Close
+                                                            </button>
+                                                            <button type="button" class="btn btn-primary">
+                                                                Save changes
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- /Large Modal -->
+                                            <div class="col-lg-4 col-sm-6">
+                                                <div class="panel panel-transparent">
+                                                    <div class="panel-heading">
+                                                        <div class="panel-title">
+                                                            Large Modal
+                                                        </div>
+                                                    </div>
+                                                    <div class="panel-body">
+                                                        <p class="margin-bottom-30">
+                                                            Modals have a large optional size, available by setting option
+                                                            <code>size: 'lg'</code> in the method
+                                                            <code>open(options)</code>
+                                                        </p>
+                                                        <button class="btn btn-primary btn-o pull-right" data-toggle="modal" data-target=".bs-example-modal-lg">
+                                                            Open Large Modal
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Small Modal -->
+                                            <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog modal-dialog modal-sm">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            Modal Content
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-primary btn-o" data-dismiss="modal">
+                                                                Close
+                                                            </button>
+                                                            <button type="button" class="btn btn-primary">
+                                                                Save changes
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- /Small Modal -->
+                                            <div class="col-lg-4 col-sm-6">
+                                                <div class="panel panel-transparent">
+                                                    <div class="panel-heading">
+                                                        <div class="panel-title">
+                                                            Small Modal
+                                                        </div>
+                                                    </div>
+                                                    <div class="panel-body">
+                                                        <p class="margin-bottom-30">
+                                                            Modals have a small optional size, available by setting option
+                                                            <code>size: 'sm'</code> in the method
+                                                            <code>open(options)</code>
+                                                        </p>
+                                                        <button class="btn btn-primary btn-o pull-right" data-toggle="modal" data-target=".bs-example-modal-sm">
+                                                            Open Small Modal
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end: UI BOOTSTRAP MODALS -->
+                            <!-- start: ASIDE -->
+                            <div class="container-fluid container-fullw">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <h5 class="over-title">
+                                            <span class="text-bold">Aside</span>
+                                        </h5>
+                                        <p class="margin-bottom-30">
+                                            Off canvas side menu to use with Bootstrap's modal.
+                                        </p>
+                                        <div class="row">
+                                            <!-- Up Aside -->
+                                            <div class="modal fade modal-aside vertical top bs-example-modal-up" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+                                                 aria-hidden="true">
+                                                <div class="modal-dialog modal-dialog modal-sm">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="btn btn-primary">
+                                                                Save changes
+                                                            </button><h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <iframe width="100%" height="300px" id="devextremetree"></iframe>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- /Up Aside -->
+                                            <div class="col-sm-6 col-lg-3">
+                                                <div class="panel panel-white">
+                                                    <div class="panel-heading">
+                                                        <div class="panel-title">
+                                                            Up Aside
+                                                        </div>
+                                                    </div>
+                                                    <div class="panel-body">
+                                                        <p class="margin-bottom-30">
+                                                            This modal slide down from the top of the page.
+                                                        </p>
+                                                        <button onclick="testdevextreme(this, event)" type="button" class="btn btn-primary btn-block btn-scroll btn-scroll-top ti-arrow-up" data-toggle="modal" data-target=".bs-example-modal-up">
+                                                            <span>Up</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Left Aside -->
+                                            <div class="modal fade modal-aside horizontal left bs-example-modal-left" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+                                                 aria-hidden="true">
+                                                <div class="modal-dialog modal-dialog modal-sm">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            Modal Content
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-primary btn-o" data-dismiss="modal">
+                                                                Close
+                                                            </button>
+                                                            <button type="button" class="btn btn-primary">
+                                                                Save changes
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- /Left Aside -->
+                                            <div class="col-sm-6 col-lg-3">
+                                                <div class="panel panel-white">
+                                                    <div class="panel-heading">
+                                                        <div class="panel-title">
+                                                            Left Aside
+                                                        </div>
+                                                    </div>
+                                                    <div class="panel-body">
+                                                        <p class="margin-bottom-30">
+                                                            This modal slides from the left side of the page.
+                                                        </p>
+                                                        <button type="button" class="btn btn-primary btn-block btn-scroll btn-scroll-top ti-arrow-left" data-toggle="modal" data-target=".bs-example-modal-left">
+                                                            <span>Left</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Down Aside -->
+                                            <div class="modal fade modal-aside vertical bottom bs-example-modal-bottom" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+                                                 aria-hidden="true">
+                                                <div class="modal-dialog modal-dialog modal-sm">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            Modal Content
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-primary btn-o" data-dismiss="modal">
+                                                                Close
+                                                            </button>
+                                                            <button type="button" class="btn btn-primary">
+                                                                Save changes
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- /Down Aside -->
+                                            <div class="col-sm-6 col-lg-3">
+                                                <div class="panel panel-white">
+                                                    <div class="panel-heading">
+                                                        <div class="panel-title">
+                                                            Down Aside
+                                                        </div>
+                                                    </div>
+                                                    <div class="panel-body">
+                                                        <p class="margin-bottom-30">
+                                                            This modal slide up from the bottom of the page.
+                                                        </p>
+                                                        <button type="button" class="btn btn-primary btn-block btn-scroll btn-scroll-top ti-arrow-down" data-toggle="modal" data-target=".bs-example-modal-bottom">
+                                                            <span>Down</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Right Aside -->
+                                            <div class="modal fade modal-aside horizontal right bs-example-modal-right" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+                                                 aria-hidden="true">
+                                                <div class="modal-dialog modal-dialog modal-sm">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            Modal Content
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-primary btn-o" data-dismiss="modal">
+                                                                Close
+                                                            </button>
+                                                            <button type="button" class="btn btn-primary">
+                                                                Save changes
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- /Right Aside -->
+                                            <div class="col-sm-6 col-lg-3">
+                                                <div class="panel panel-white">
+                                                    <div class="panel-heading">
+                                                        <div class="panel-title">
+                                                            Right Aside
+                                                        </div>
+                                                    </div>
+                                                    <div class="panel-body">
+                                                        <p class="margin-bottom-30">
+                                                            This modal slides from the right side of the page
+                                                        </p>
+                                                        <button type="button" class="btn btn-primary btn-block btn-scroll btn-scroll-top ti-arrow-right" data-toggle="modal" data-target=".bs-example-modal-right">
+                                                            <span>Right</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end: ASIDE -->
+
+
+                        </div>
+                    </section>
+                </div>
+                <div class="container-fluid container-fullw">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div id="sample">
+                                <div id="myDiagramDiv" style="border: solid 1px black; width:100%; height:700px;"></div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="footer-inner">
+                <div class="pull-left">
+                    &copy;
+                    <span class="current-year"></span>
+                    <span class="text-bold text-uppercase">ClipTheme</span>.
+                    <span>All rights reserved</span>
+                </div>
+                <div class="pull-right">
+                    <span class="go-top">
+                        <i class="ti-angle-up"></i>
+                    </span>
+                </div>
+            </div>
+        </footer>
+        <div id="off-sidebar" class="sidebar">
+            <div class="sidebar-wrapper">
+                <ul id="offTab" class="nav nav-tabs nav-justified">
+                    <li class="nav-item">
+                        <a href="#off-users" class="nav-link active" aria-controls="off-users" role="tab" data-toggle="tab">
+                            <i class="ti-comments"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#off-activities" class="nav-link" aria-controls="off-activities" role="tab" data-toggle="tab">
+                            <i class="ti-check-box"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#off-favorites" class="nav-link" aria-controls="off-favorites" role="tab" data-toggle="tab">
+                            <i class="ti-heart"></i>
+                        </a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="off-users">
+                        <div id="users" toggleable active-class="chat-open">
+                            <div class="users-list">
+                                <div class="sidebar-content perfect-scrollbar">
+                                    <h5 class="sidebar-title">On-line</h5>
+                                    <ul class="list-unstyled media-list">
+                                        <li class="media">
+                                            <a data-toggle-class="chat-open" data-toggle-target="#users" href="#">
+                                                <i class="fa fa-circle status-online"></i>
+                                                <img alt="..." src="//hrm.dnd.vn/media/images/avatar-2.jpg" class="media-object" />
+                                                <div class="media-body">
+                                                    <h4 class="media-heading">Nicole Bell</h4>
+                                                    <span>Content Designer</span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="media">
+                                            <a data-toggle-class="chat-open" data-toggle-target="#users" href="#">
+                                                <div class="user-label">
+                                                    <span class="badge badge-success">3</span>
+                                                </div>
+                                                <i class="fa fa-circle status-online"></i>
+                                                <img alt="..." src="//hrm.dnd.vn/media/images/avatar-3.jpg" class="media-object" />
+                                                <div class="media-body">
+                                                    <h4 class="media-heading">Steven Thompson</h4>
+                                                    <span>Visual Designer</span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="media">
+                                            <a data-toggle-class="chat-open" data-toggle-target="#users" href="#">
+                                                <i class="fa fa-circle status-online"></i>
+                                                <img alt="..." src="//hrm.dnd.vn/media/images/avatar-4.jpg" class="media-object" />
+                                                <div class="media-body">
+                                                    <h4 class="media-heading">Ella Patterson</h4>
+                                                    <span>Web Editor</span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="media">
+                                            <a data-toggle-class="chat-open" data-toggle-target="#users" href="#">
+                                                <i class="fa fa-circle status-online"></i>
+                                                <img alt="..." src="//hrm.dnd.vn/media/images/avatar-5.jpg" class="media-object" />
+                                                <div class="media-body">
+                                                    <h4 class="media-heading">Kenneth Ross</h4>
+                                                    <span>Senior Designer</span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <h5 class="sidebar-title">Off-line</h5>
+                                    <ul class="list-unstyled media-list">
+                                        <li class="media">
+                                            <a data-toggle-class="chat-open" data-toggle-target="#users" href="#">
+                                                <img alt="..." src="//hrm.dnd.vn/media/images/avatar-6.jpg" class="media-object" />
+                                                <div class="media-body">
+                                                    <h4 class="media-heading">Nicole Bell</h4>
+                                                    <span>Content Designer</span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="media">
+                                            <a data-toggle-class="chat-open" data-toggle-target="#users" href="#">
+                                                <div class="user-label">
+                                                    <span class="badge badge-success">3</span>
+                                                </div>
+                                                <img alt="..." src="//hrm.dnd.vn/media/images/avatar-7.jpg" class="media-object" />
+                                                <div class="media-body">
+                                                    <h4 class="media-heading">Steven Thompson</h4>
+                                                    <span>Visual Designer</span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="media">
+                                            <a data-toggle-class="chat-open" data-toggle-target="#users" href="#">
+                                                <img alt="..." src="//hrm.dnd.vn/media/images/avatar-8.jpg" class="media-object" />
+                                                <div class="media-body">
+                                                    <h4 class="media-heading">Ella Patterson</h4>
+                                                    <span>Web Editor</span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="media">
+                                            <a data-toggle-class="chat-open" data-toggle-target="#users" href="#">
+                                                <img alt="..." src="//hrm.dnd.vn/media/images/avatar-9.jpg" class="media-object" />
+                                                <div class="media-body">
+                                                    <h4 class="media-heading">Kenneth Ross</h4>
+                                                    <span>Senior Designer</span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="media">
+                                            <a data-toggle-class="chat-open" data-toggle-target="#users" href="#">
+                                                <img alt="..." src="//hrm.dnd.vn/media/images/avatar-10.jpg" class="media-object" />
+                                                <div class="media-body">
+                                                    <h4 class="media-heading">Ella Patterson</h4>
+                                                    <span>Web Editor</span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="media">
+                                            <a data-toggle-class="chat-open" data-toggle-target="#users" href="#">
+                                                <img alt="..." src="//hrm.dnd.vn/media/images/avatar-5.jpg" class="media-object" />
+                                                <div class="media-body">
+                                                    <h4 class="media-heading">Kenneth Ross</h4>
+                                                    <span>Senior Designer</span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="user-chat">
+                                <div class="chat-content">
+                                    <div class="sidebar-content perfect-scrollbar">
+                                        <a class="sidebar-back pull-left" href="#" data-toggle-class="chat-open" data-toggle-target="#users">
+                                            <i class="ti-angle-left"></i>
+                                            <span>Back</span>
+                                        </a>
+                                        <ol class="discussion">
+                                            <li class="messages-date">Sunday, Feb 9, 12:58</li>
+                                            <li class="self">
+                                                <div class="message">
+                                                    <div class="message-name">Peter Clark</div>
+                                                    <div class="message-text">Hi, Nicole</div>
+                                                    <div class="message-avatar">
+                                                        <img src="//hrm.dnd.vn/media/images/avatar-1.jpg" alt="" />
+                                                    </div>
+                                                </div>
+                                                <div class="message">
+                                                    <div class="message-name">Nicole Bell</div>
+                                                    <div class="message-text">How are you?</div>
+                                                    <div class="message-avatar">
+                                                        <img src="//hrm.dnd.vn/media/images/avatar-1.jpg" alt="" />
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="other">
+                                                <div class="message">
+                                                    <div class="message-name">Nicole Bell</div>
+                                                    <div class="message-text">Hi, i am good</div>
+                                                    <div class="message-avatar">
+                                                        <img src="//hrm.dnd.vn/media/images/avatar-2.jpg" alt="" />
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="self">
+                                                <div class="message">
+                                                    <div class="message-name">Peter Clark</div>
+                                                    <div class="message-text">Glad to see you ;)</div>
+                                                    <div class="message-avatar">
+                                                        <img src="//hrm.dnd.vn/media/images/avatar-1.jpg" alt="" />
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="messages-date">Sunday, Feb 9, 13:10</li>
+                                            <li class="other">
+                                                <div class="message">
+                                                    <div class="message-name">Nicole Bell</div>
+                                                    <div class="message-text">What do you think about my new Dashboard?</div>
+                                                    <div class="message-avatar">
+                                                        <img src="//hrm.dnd.vn/media/images/avatar-2.jpg" alt="" />
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="messages-date">Sunday, Feb 9, 15:28</li>
+                                            <li class="other">
+                                                <div class="message">
+                                                    <div class="message-name">Nicole Bell</div>
+                                                    <div class="message-text">Alo...</div>
+                                                    <div class="message-avatar">
+                                                        <img src="//hrm.dnd.vn/media/images/avatar-2.jpg" alt="" />
+                                                    </div>
+                                                </div>
+                                                <div class="message">
+                                                    <div class="message-name">Nicole Bell</div>
+                                                    <div class="message-text">Are you there?</div>
+                                                    <div class="message-avatar">
+                                                        <img src="//hrm.dnd.vn/media/images/avatar-2.jpg" alt="" />
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="self">
+                                                <div class="message">
+                                                    <div class="message-name">Peter Clark</div>
+                                                    <div class="message-text">Hi, i am here</div>
+                                                    <div class="message-avatar">
+                                                        <img src="//hrm.dnd.vn/media/images/avatar-1.jpg" alt="" />
+                                                    </div>
+                                                </div>
+                                                <div class="message">
+                                                    <div class="message-name">Nicole Bell</div>
+                                                    <div class="message-text">Your Dashboard is great</div>
+                                                    <div class="message-avatar">
+                                                        <img src="//hrm.dnd.vn/media/images/avatar-1.jpg" alt="" />
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="messages-date">Friday, Feb 7, 23:39</li>
+                                            <li class="other">
+                                                <div class="message">
+                                                    <div class="message-name">Nicole Bell</div>
+                                                    <div class="message-text">How does the binding and digesting work in AngularJS?, Peter?</div>
+                                                    <div class="message-avatar">
+                                                        <img src="//hrm.dnd.vn/media/images/avatar-2.jpg" alt="" />
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="self">
+                                                <div class="message">
+                                                    <div class="message-name">Peter Clark</div>
+                                                    <div class="message-text">oh that's your question?</div>
+                                                    <div class="message-avatar">
+                                                        <img src="//hrm.dnd.vn/media/images/avatar-1.jpg" alt="" />
+                                                    </div>
+                                                </div>
+                                                <div class="message">
+                                                    <div class="message-name">Peter Clark</div>
+                                                    <div class="message-text">little reduntant, no?</div>
+                                                    <div class="message-avatar">
+                                                        <img src="//hrm.dnd.vn/media/images/avatar-1.jpg" alt="" />
+                                                    </div>
+                                                </div>
+                                                <div class="message">
+                                                    <div class="message-name">Peter Clark</div>
+                                                    <div class="message-text">literally we get the question daily</div>
+                                                    <div class="message-avatar">
+                                                        <img src="//hrm.dnd.vn/media/images/avatar-1.jpg" alt="" />
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="other">
+                                                <div class="message">
+                                                    <div class="message-name">Nicole Bell</div>
+                                                    <div class="message-text">I know. I, however, am not a nerd, and want to know</div>
+                                                    <div class="message-avatar">
+                                                        <img src="//hrm.dnd.vn/media/images/avatar-2.jpg" alt="" />
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="self">
+                                                <div class="message">
+                                                    <div class="message-name">Peter Clark</div>
+                                                    <div class="message-text">for this type of question, wouldn't it be better to try Google?</div>
+                                                    <div class="message-avatar">
+                                                        <img src="//hrm.dnd.vn/media/images/avatar-1.jpg" alt="" />
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="other">
+                                                <div class="message">
+                                                    <div class="message-name">Nicole Bell</div>
+                                                    <div class="message-text">Lucky for us :)</div>
+                                                    <div class="message-avatar">
+                                                        <img src="//hrm.dnd.vn/media/images/avatar-2.jpg" alt="" />
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ol>
+                                    </div>
+                                </div>
+                                <div class="message-bar">
+                                    <div class="message-inner">
+                                        <a class="link icon-only" href="#">
+                                            <i class="fa fa-camera"></i>
+                                        </a>
+                                        <div class="message-area">
+                                            <textarea placeholder="Message"></textarea>
+                                        </div>
+                                        <a class="link" href="#">Send</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="off-activities">
+                        <div class="sidebar-content perfect-scrollbar">
+                            <h5 class="sidebar-title">Activities</h5>
+                            <div class="list-group no-margin">
+                                <a class="media list-group-item list-group-item-action text-center" href="">
+                                    <img class="rounded-circle" alt="Avatar" src="//hrm.dnd.vn/media/images/avatar-1.jpg" />
+                                    <span class="media-body block no-margin">
+                                        Use awesome animate.css
+                                        <small class="block text-grey">10 minutes ago</small>
+                                    </span>
+                                </a>
+                                <a class="media list-group-item list-group-item-action text-center" href="">
+                                    <span class="media-body block no-margin">
+                                        1.0 initial released
+                                        <small class="block text-grey">1 hour ago</small>
+                                    </span>
+                                </a>
+                                <a class="media list-group-item list-group-item-action text-center" href="">
+                                    <span class="media-body block no-margin">
+                                        Briefing project
+                                        <small class="block text-grey">2 hour ago</small>
+                                    </span>
+                                </a>
+                                <a class="media list-group-item list-group-item-action text-center" href="">
+                                    <span class="media-body block no-margin">
+                                        Update jQuery
+                                        <small class="block text-grey">3 hour ago</small>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="off-favorites">
+                        <div class="users-list">
+                            <div class="sidebar-content perfect-scrollbar">
+                                <h5 class="sidebar-title">Favorites</h5>
+                                <ul class="list-unstyled media-list">
+                                    <li class="media">
+                                        <a href="#">
+                                            <img alt="..." src="//hrm.dnd.vn/media/images/avatar-7.jpg" class="media-object" />
+                                            <div class="media-body">
+                                                <h4 class="media-heading">Nicole Bell</h4>
+                                                <span>Content Designer</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="media">
+                                        <a href="#">
+                                            <div class="user-label">
+                                                <span class="badge badge-success">3</span>
+                                            </div>
+                                            <img alt="..." src="//hrm.dnd.vn/media/images/avatar-6.jpg" class="media-object" />
+                                            <div class="media-body">
+                                                <h4 class="media-heading">Steven Thompson</h4>
+                                                <span>Visual Designer</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="media">
+                                        <a href="#">
+                                            <img alt="..." src="//hrm.dnd.vn/media/images/avatar-10.jpg" class="media-object" />
+                                            <div class="media-body">
+                                                <h4 class="media-heading">Ella Patterson</h4>
+                                                <span>Web Editor</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="media">
+                                        <a href="#">
+                                            <img alt="..." src="//hrm.dnd.vn/media/images/avatar-2.jpg" class="media-object" />
+                                            <div class="media-body">
+                                                <h4 class="media-heading">Kenneth Ross</h4>
+                                                <span>Senior Designer</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="media">
+                                        <a href="#">
+                                            <img alt="..." src="//hrm.dnd.vn/media/images/avatar-4.jpg" class="media-object" />
+                                            <div class="media-body">
+                                                <h4 class="media-heading">Ella Patterson</h4>
+                                                <span>Web Editor</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="media">
+                                        <a href="#">
+                                            <img alt="..." src="//hrm.dnd.vn/media/images/avatar-5.jpg" class="media-object" />
+                                            <div class="media-body">
+                                                <h4 class="media-heading">Kenneth Ross</h4>
+                                                <span>Senior Designer</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="settings panel panel-default hidden-xs hidden-sm" id="settings">
+            <button ct-toggle="toggle" data-toggle-class="active" data-toggle-target="#settings" class="btn btn-default">
+                <i class="fa fa-spin fa-gear"></i>
+            </button>
+            <div class="panel-heading">Style Selector</div>
+            <div class="panel-body">
+                <div class="setting-box clearfix">
+                    <span class="setting-title float-left">Fixed header</span>
+                    <span class="setting-switch float-right">
+                        <label class="tgl">
+                            <input type="checkbox" id="fixed-header" />
+                            <span class="tgl_body">
+                                <span class="tgl_switch"></span>
+                                <span class="tgl_track">
+                                    <span class="tgl_bgd"></span>
+                                    <span class="tgl_bgd tgl_bgd-negative"></span>
+                                </span>
+                            </span>
+                        </label>
+                    </span>
+                </div>
+                <div class="setting-box clearfix">
+                    <span class="setting-title float-left">Fixed sidebar</span>
+                    <span class="setting-switch float-right">
+                        <label class="tgl">
+                            <input type="checkbox" id="fixed-sidebar" />
+                            <span class="tgl_body">
+                                <span class="tgl_switch"></span>
+                                <span class="tgl_track">
+                                    <span class="tgl_bgd"></span>
+                                    <span class="tgl_bgd tgl_bgd-negative"></span>
+                                </span>
+                            </span>
+                        </label>
+                    </span>
+                </div>
+                <div class="setting-box clearfix">
+                    <span class="setting-title float-left">Closed sidebar</span>
+                    <span class="setting-switch float-right">
+                        <label class="tgl">
+                            <input type="checkbox" id="closed-sidebar" />
+                            <span class="tgl_body">
+                                <span class="tgl_switch"></span>
+                                <span class="tgl_track">
+                                    <span class="tgl_bgd"></span>
+                                    <span class="tgl_bgd tgl_bgd-negative"></span>
+                                </span>
+                            </span>
+                        </label>
+                    </span>
+                </div>
+                <div class="setting-box clearfix">
+                    <span class="setting-title float-left">Fixed footer</span>
+                    <span class="setting-switch float-right">
+                        <label class="tgl">
+                            <input type="checkbox" id="fixed-footer" />
+                            <span class="tgl_body">
+                                <span class="tgl_switch"></span>
+                                <span class="tgl_track">
+                                    <span class="tgl_bgd"></span>
+                                    <span class="tgl_bgd tgl_bgd-negative"></span>
+                                </span>
+                            </span>
+                        </label>
+                    </span>
+                </div>
+                <div class="colors-row setting-box">
+                    <div class="color-theme theme-1">
+                        <div class="color-layout">
+                            <label>
+                                <input type="radio" name="setting-theme" value="theme-1" />
+                                <span class="ti-check"></span>
+                                <span class="split header">
+                                    <span class="color th-header"></span>
+                                    <span class="color th-collapse"></span>
+                                </span>
+                                <span class="split">
+                                    <span class="color th-sidebar">
+                                        <i class="element"></i>
+                                    </span>
+                                    <span class="color th-body"></span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="color-theme theme-2">
+                        <div class="color-layout">
+                            <label>
+                                <input type="radio" name="setting-theme" value="theme-2" />
+                                <span class="ti-check"></span>
+                                <span class="split header">
+                                    <span class="color th-header"></span>
+                                    <span class="color th-collapse"></span>
+                                </span>
+                                <span class="split">
+                                    <span class="color th-sidebar">
+                                        <i class="element"></i>
+                                    </span>
+                                    <span class="color th-body"></span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="colors-row setting-box">
+                    <div class="color-theme theme-3">
+                        <div class="color-layout">
+                            <label>
+                                <input type="radio" name="setting-theme" value="theme-3" />
+                                <span class="ti-check"></span>
+                                <span class="split header">
+                                    <span class="color th-header"></span>
+                                    <span class="color th-collapse"></span>
+                                </span>
+                                <span class="split">
+                                    <span class="color th-sidebar">
+                                        <i class="element"></i>
+                                    </span>
+                                    <span class="color th-body"></span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="color-theme theme-4">
+                        <div class="color-layout">
+                            <label>
+                                <input type="radio" name="setting-theme" value="theme-4" />
+                                <span class="ti-check"></span>
+                                <span class="split header">
+                                    <span class="color th-header"></span>
+                                    <span class="color th-collapse"></span>
+                                </span>
+                                <span class="split">
+                                    <span class="color th-sidebar">
+                                        <i class="element"></i>
+                                    </span>
+                                    <span class="color th-body"></span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="colors-row setting-box">
+                    <div class="color-theme theme-5">
+                        <div class="color-layout">
+                            <label>
+                                <input type="radio" name="setting-theme" value="theme-5" />
+                                <span class="ti-check"></span>
+                                <span class="split header">
+                                    <span class="color th-header"></span>
+                                    <span class="color th-collapse"></span>
+                                </span>
+                                <span class="split">
+                                    <span class="color th-sidebar">
+                                        <i class="element"></i>
+                                    </span>
+                                    <span class="color th-body"></span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="color-theme theme-6">
+                        <div class="color-layout">
+                            <label>
+                                <input type="radio" name="setting-theme" value="theme-6" />
+                                <span class="ti-check"></span>
+                                <span class="split header">
+                                    <span class="color th-header"></span>
+                                    <span class="color th-collapse"></span>
+                                </span>
+                                <span class="split">
+                                    <span class="color th-sidebar">
+                                        <i class="element"></i>
+                                    </span>
+                                    <span class="color th-body"></span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="//hrm.dnd.vn/media/js/vendors.bundle.min.js"></script>
+    <script src="//hrm.dnd.vn/media/js/main.js"></script>
+    <script>
+NProgress.configure({ showSpinner: !1 }), NProgress.start(), NProgress.set(.4); var interval = setInterval(function () { NProgress.inc() }, 1e3);
+        jQuery(document).ready(function () { NProgress.done(), clearInterval(interval), Main.init() })
+    </script>
+
+
+    <script type="text/javascript">
+          if (typeof Object.assign != 'function') {
+              // Must be writable: true, enumerable: false, configurable: true
+              Object.defineProperty(Object, "assign", {
+                  value: function assign(target, varArgs) { // .length of function is 2
+                      'use strict';
+                      if (target == null) { // TypeError if undefined or null
+                          throw new TypeError('Cannot convert undefined or null to object');
+                      }
+
+                      var to = Object(target);
+
+                      for (var index = 1; index < arguments.length; index++) {
+                          var nextSource = arguments[index];
+
+                          if (nextSource != null) { // Skip over if undefined or null
+                              for (var nextKey in nextSource) {
+                                  // Avoid bugs when hasOwnProperty is shadowed
+                                  if (Object.prototype.hasOwnProperty.call(nextSource, nextKey)) {
+                                      to[nextKey] = nextSource[nextKey];
+                                  }
+                              }
+                          }
+                      }
+                      return to;
+                  },
+                  writable: true,
+                  configurable: true
+              });
+          }
+    </script>
+
+
+
+
+    <!--<script src="//hrm.dnd.vn/media/vendor/chrome-tabs/js/draggabilly.pkgd.js"></script>-->
+    <script src="//hrm.dnd.vn/media/vendor/chrome-tabs/js/chrome-tabs.js"></script>
+
+    <!-- Styles to prevent flash after JS initialization -->
+    <style type="text/css">
+        .app-navbar-fixed .toikhoqua {
+            position: fixed;
+            top: 65px;
+            z-index: 2000;
+            width: 100%;
+        }
+
+        @media (max-width: 999px) {
+            .toikhoqua {
+                position: fixed;
+                top: 65px;
+                z-index: 2000;
+                width: 100%;
+            }
+
+            .main-content {
+                top: 50px !important;
+            }
+        }
+
+        @media (min-width: 1000px) {
+            .chrome-tabs {
+                position: absolute;
+                margin-top: -47px;
+                z-index: 10000000;
+                width: 500px;
+                background: none !important;
+            }
+        }
+
+        .chrome-tabs-bottom-bar {
+            height: 3px;
+            background-color: #fff;
+            margin-top: -4px;
+            position: absolute;
+            z-index: 1990;
+            width: 100%;
+        }
+
+
+
+        /*.ekko-lightbox {
+            display:block!important;
+        }*/
+    </style>
+
+    <script>
+        'use strict';
+        //convert:https://es6console.com/
+
+        var el = document.querySelector('.chrome-tabs');
+        var chromeTabs = new ChromeTabs();
+
+        chromeTabs.init(el,function () {
+            var cb = 1;
+        });
+
+        //el.addEventListener('activeTabChange', ({ detail }) => console.log('Active tab changed', detail.tabEl))
+        //el.addEventListener('tabAdd', ({ detail }) => console.log('Tab added', detail.tabEl))
+        //el.addEventListener('tabRemove', ({ detail }) => console.log('Tab removed', detail.tabEl))
+
+        el.addEventListener('activeTabChange', function (detail) {
+            var c = 0;
+        });
+        el.addEventListener('tabAdd', function (detail) {
+            var c = 0;
+        });
+        el.addEventListener('tabRemove', function (detail) {
+            var c = 0;
+        });
+
+        document.querySelector('button[data-add-tab]').addEventListener('click', function (_) {
+            chromeTabs.addTab({
+                title: 'New Tab',
+                favicon: false
+            });
+        });
+
+        document.querySelector('button[data-add-background-tab]').addEventListener('click', function (_) {
+            chromeTabs.addTab({
+                title: 'New Tab',
+                favicon: false
+            }, {
+                background: true
+            });
+        });
+
+        document.querySelector('button[data-remove-tab]').addEventListener('click', function (_) {
+            chromeTabs.removeTab(chromeTabs.activeTabEl);
+        });
+
+        document.querySelector('button[data-theme-toggle]').addEventListener('click', function (_) {
+            if (el.classList.contains('chrome-tabs-dark-theme')) {
+                document.documentElement.classList.remove('dark-theme');
+                el.classList.remove('chrome-tabs-dark-theme');
+            } else {
+                document.documentElement.classList.add('dark-theme');
+                el.classList.add('chrome-tabs-dark-theme');
+            }
+        });
+
+        window.addEventListener('keydown', function (event) {
+            if (event.ctrlKey && event.key === 't') {
+                chromeTabs.addTab({
+                    title: 'New Tab',
+                    favicon: false
+                });
+            }
+        });
+    </script>
+
+    <script type="text/javascript">
+        function testdevextreme(el,event) {
+            event.preventDefault();
+            $('#devextremetree').attr('src', '/localsrc/devextreme/treelist.php');
+        }
+        function toggle_lightbox(el, event, link) {
+            downloadx(el, event, link, true);
+        }
+
+
+        function downloadx(el, event, link, cb) {
+            event.preventDefault();
+            //
+            prepare_popup(el, function (rst) {
+                if (typeof cb === "function") {
+                    cb();
+                } else {
+                    if (!cb) {
+                        if (link.toLowerCase().indexOf("http") == -1) {
+                            link = window.location.origin + link;
+                        };
+                        //
+                        var ur = '/localsrc/devextreme/treelist.php';
+                        $(el).attr('href', ur);
+                        $(el).attr('data-footer', "...");
+                    } else {
+                        if (link.toLowerCase().indexOf("http") == -1) {
+                            link = window.location.origin + link;
+                        };
+                        //
+                        $(el).attr('href', link);
+                    }
+                    //
+                    $(el).ekkoLightbox({
+                        customfooter: '<div class="custommodal-footer"><button type="button" class="btn btn-primary">Đóng</button></div>',
+                        onShown: function () {
+                            if (window.console) {
+                                return console.log('Checking our the events huh?');
+                            }
+                        }
+                    });
+                }
+            });
+        }
+
+        function prepare_popup(el,cb) {
+            var loader = document.createElement('DIV');
+            loader.innerHTML = '<div class="spinner-border" role="status"><span class="sr-only">Loading...</span></div>';
+            el.insertBefore(loader, el.firstChild);
+            init_popup(function (rst) {
+                $(el).find('.spinner-border').remove();
+                //
+                if (cb) cb(rst);
+            });
+        }
+        function init_popup(cb) {
+            if (typeof Tether == 'undefined') {
+                getScript('//hrm.dnd.vn/media/vendor/ekko-lightbox/dist/ekko-lightbox.css', 'css', function () {
+                    getScript('//hrm.dnd.vn/media/vendor/ekko-lightbox/dist/tether.min.js', 'js', function () {
+                        getScript('//hrm.dnd.vn/media/vendor/ekko-lightbox/dist/ekko-lightbox.js', 'js', function () {
+                            getScript('//hrm.dnd.vn/media/vendor/ekko-lightbox/anchor.min.js', 'js', function () {
+                                // custom button click
+                                $(document).on('click', '.ekko-lightbox .btn', function (event) {
+                                    event.preventDefault();
+                                    $(this).closest('div[id*="ekkoLightbox-"]').data('bs.modal').hide();
+                                });
+
+                                if (cb) cb(1);
+
+                            });
+                        });
+                    });
+                });
+            } else {
+                if (cb) cb(2);
+            };
+        }
+
+        function getScript(url, filetype, success) {
+            var script, head = document.getElementsByTagName('head')[0], done = false;
+            if (filetype == "js") {
+                script = document.createElement('script');
+                script.setAttribute("type", "text/javascript");
+                script.setAttribute("src", url);
+            } else if (filetype == "css") {
+                script = document.createElement("link");
+                script.setAttribute("rel", "stylesheet");
+                script.setAttribute("type", "text/css");
+                script.setAttribute("href", url);
+            } else {
+                return;
+            }
+            script.onload = script.onreadystatechange = function () {
+                if (!done && (!this.readyState || this.readyState == 'loaded' || this.readyState == 'complete')) {
+                    done = true;
+                    success();
+                    script.onload = script.onreadystatechange = null;
+                    if (filetype == 'js') {
+                        head.removeChild(script);
+                    };
+                }
+            };
+            head.appendChild(script);
+        }
+    </script>
+
+
+    <script id="code">
+    // These parameters need to be set before defining the templates.
+    var MINLENGTH = 200;  // this controls the minimum length of any swimlane
+    var MINBREADTH = 20;  // this controls the minimum breadth of any non-collapsed swimlane
+
+    // some shared functions
+
+    // this may be called to force the lanes to be laid out again
+    function relayoutLanes() {
+      myDiagram.nodes.each(function(lane) {
+        if (!(lane instanceof go.Group)) return;
+        if (lane.category === "Pool") return;
+        lane.layout.isValidLayout = false;  // force it to be invalid
+      });
+      myDiagram.layoutDiagram();
+    }
+
+    // this is called after nodes have been moved or lanes resized, to layout all of the Pool Groups again
+    function relayoutDiagram() {
+      myDiagram.layout.invalidateLayout();
+      myDiagram.findTopLevelGroups().each(function(g) { if (g.category === "Pool") g.layout.invalidateLayout(); });
+      myDiagram.layoutDiagram();
+    }
+
+    // compute the minimum size of a Pool Group needed to hold all of the Lane Groups
+    function computeMinPoolSize(pool) {
+      // assert(pool instanceof go.Group && pool.category === "Pool");
+      var len = MINLENGTH;
+      pool.memberParts.each(function(lane) {
+        // pools ought to only contain lanes, not plain Nodes
+        if (!(lane instanceof go.Group)) return;
+        var holder = lane.placeholder;
+        if (holder !== null) {
+          var sz = holder.actualBounds;
+          len = Math.max(len, sz.width);
+        }
+      });
+      return new go.Size(len, NaN);
+    }
+
+    // compute the minimum size for a particular Lane Group
+    function computeLaneSize(lane) {
+      // assert(lane instanceof go.Group && lane.category !== "Pool");
+      var sz = computeMinLaneSize(lane);
+      if (lane.isSubGraphExpanded) {
+        var holder = lane.placeholder;
+        if (holder !== null) {
+          var hsz = holder.actualBounds;
+          sz.height = Math.max(sz.height, hsz.height);
+        }
+      }
+      // minimum breadth needs to be big enough to hold the header
+      var hdr = lane.findObject("HEADER");
+      if (hdr !== null) sz.height = Math.max(sz.height, hdr.actualBounds.height);
+      return sz;
+    }
+
+    // determine the minimum size of a Lane Group, even if collapsed
+    function computeMinLaneSize(lane) {
+      if (!lane.isSubGraphExpanded) return new go.Size(MINLENGTH, 1);
+      return new go.Size(MINLENGTH, MINBREADTH);
+    }
+
+
+    // define a custom ResizingTool to limit how far one can shrink a lane Group
+    function LaneResizingTool() {
+      go.ResizingTool.call(this);
+    }
+    go.Diagram.inherit(LaneResizingTool, go.ResizingTool);
+
+    LaneResizingTool.prototype.isLengthening = function() {
+      return (this.handle.alignment === go.Spot.Right);
+    };
+
+    LaneResizingTool.prototype.computeMinSize = function() {
+      var lane = this.adornedObject.part;
+      // assert(lane instanceof go.Group && lane.category !== "Pool");
+      var msz = computeMinLaneSize(lane);  // get the absolute minimum size
+      if (this.isLengthening()) {  // compute the minimum length of all lanes
+        var sz = computeMinPoolSize(lane.containingGroup);
+        msz.width = Math.max(msz.width, sz.width);
+      } else {  // find the minimum size of this single lane
+        var sz = computeLaneSize(lane);
+        msz.width = Math.max(msz.width, sz.width);
+        msz.height = Math.max(msz.height, sz.height);
+      }
+      return msz;
+    };
+
+    LaneResizingTool.prototype.resize = function(newr) {
+      var lane = this.adornedObject.part;
+      if (this.isLengthening()) {  // changing the length of all of the lanes
+        lane.containingGroup.memberParts.each(function(lane) {
+          if (!(lane instanceof go.Group)) return;
+          var shape = lane.resizeObject;
+          if (shape !== null) {  // set its desiredSize length, but leave each breadth alone
+            shape.width = newr.width;
+          }
+        });
+      } else {  // changing the breadth of a single lane
+        go.ResizingTool.prototype.resize.call(this, newr);
+      }
+      relayoutDiagram();  // now that the lane has changed size, layout the pool again
+    };
+    // end LaneResizingTool class
+
+
+    // define a custom grid layout that makes sure the length of each lane is the same
+    // and that each lane is broad enough to hold its subgraph
+    function PoolLayout() {
+      go.GridLayout.call(this);
+      this.cellSize = new go.Size(1, 1);
+      this.wrappingColumn = 1;
+      this.wrappingWidth = Infinity;
+      this.isRealtime = false;  // don't continuously layout while dragging
+      this.alignment = go.GridLayout.Position;
+      // This sorts based on the location of each Group.
+      // This is useful when Groups can be moved up and down in order to change their order.
+      this.comparer = function(a, b) {
+        var ay = a.location.y;
+        var by = b.location.y;
+        if (isNaN(ay) || isNaN(by)) return 0;
+        if (ay < by) return -1;
+        if (ay > by) return 1;
+        return 0;
+      };
+    }
+    go.Diagram.inherit(PoolLayout, go.GridLayout);
+
+    PoolLayout.prototype.doLayout = function(coll) {
+      var diagram = this.diagram;
+      if (diagram === null) return;
+      diagram.startTransaction("PoolLayout");
+      var pool = this.group;
+      if (pool !== null && pool.category === "Pool") {
+        // make sure all of the Group Shapes are big enough
+        var minsize = computeMinPoolSize(pool);
+        pool.memberParts.each(function(lane) {
+          if (!(lane instanceof go.Group)) return;
+          if (lane.category !== "Pool") {
+            var shape = lane.resizeObject;
+            if (shape !== null) {  // change the desiredSize to be big enough in both directions
+              var sz = computeLaneSize(lane);
+              shape.width = (isNaN(shape.width) ? minsize.width : Math.max(shape.width, minsize.width));
+              shape.height = (!isNaN(shape.height)) ? Math.max(shape.height, sz.height) : sz.height;
+              var cell = lane.resizeCellSize;
+              if (!isNaN(shape.width) && !isNaN(cell.width) && cell.width > 0) shape.width = Math.ceil(shape.width / cell.width) * cell.width;
+              if (!isNaN(shape.height) && !isNaN(cell.height) && cell.height > 0) shape.height = Math.ceil(shape.height / cell.height) * cell.height;
+            }
+          }
+        });
+      }
+      // now do all of the usual stuff, according to whatever properties have been set on this GridLayout
+      go.GridLayout.prototype.doLayout.call(this, coll);
+      diagram.commitTransaction("PoolLayout");
+    };
+    // end PoolLayout class
+
+
+    function init() {
+      if (window.goSamples) goSamples();  // init for these samples -- you don't need to call this
+      var $ = go.GraphObject.make;
+
+      myDiagram =
+        $(go.Diagram, "myDiagramDiv",
+          {
+            // use a custom ResizingTool (along with a custom ResizeAdornment on each Group)
+            resizingTool: new LaneResizingTool(),
+            // use a simple layout that ignores links to stack the top-level Pool Groups next to each other
+            layout: $(PoolLayout),
+            // don't allow dropping onto the diagram's background unless they are all Groups (lanes or pools)
+            mouseDragOver: function(e) {
+              if (!e.diagram.selection.all(function(n) { return n instanceof go.Group; })) {
+                e.diagram.currentCursor = 'not-allowed';
+              }
+            },
+            mouseDrop: function(e) {
+              if (!e.diagram.selection.all(function(n) { return n instanceof go.Group; })) {
+                e.diagram.currentTool.doCancel();
+              }
+            },
+            // a clipboard copied node is pasted into the original node's group (i.e. lane).
+            "commandHandler.copiesGroupKey": true,
+            // automatically re-layout the swim lanes after dragging the selection
+            "SelectionMoved": relayoutDiagram,  // this DiagramEvent listener is
+            "SelectionCopied": relayoutDiagram, // defined above
+            "animationManager.isEnabled": false,
+            // enable undo & redo
+            "undoManager.isEnabled": true
+          });
+
+      // this is a Part.dragComputation function for limiting where a Node may be dragged
+      // use GRIDPT instead of PT if DraggingTool.isGridSnapEnabled and movement should snap to grid
+      function stayInGroup(part, pt, gridpt) {
+        // don't constrain top-level nodes
+        var grp = part.containingGroup;
+        if (grp === null) return pt;
+        // try to stay within the background Shape of the Group
+        var back = grp.resizeObject;
+        if (back === null) return pt;
+        // allow dragging a Node out of a Group if the Shift key is down
+        if (part.diagram.lastInput.shift) return pt;
+        var p1 = back.getDocumentPoint(go.Spot.TopLeft);
+        var p2 = back.getDocumentPoint(go.Spot.BottomRight);
+        var b = part.actualBounds;
+        var loc = part.location;
+        // find the padding inside the group's placeholder that is around the member parts
+        var m = grp.placeholder.padding;
+        // now limit the location appropriately
+        var x = Math.max(p1.x + m.left, Math.min(pt.x, p2.x - m.right - b.width - 1)) + (loc.x - b.x);
+        var y = Math.max(p1.y + m.top, Math.min(pt.y, p2.y - m.bottom - b.height - 1)) + (loc.y - b.y);
+        return new go.Point(x, y);
+      }
+
+      myDiagram.nodeTemplate =
+        $(go.Node, "Auto",
+          new go.Binding("location", "loc", go.Point.parse).makeTwoWay(go.Point.stringify),
+          $(go.Shape, "Rectangle",
+            { fill: "white", portId: "", cursor: "pointer", fromLinkable: true, toLinkable: true }),
+          $(go.TextBlock, { margin: 5 },
+            new go.Binding("text", "key")),
+          { dragComputation: stayInGroup } // limit dragging of Nodes to stay within the containing Group, defined above
+        );
+
+      function groupStyle() {  // common settings for both Lane and Pool Groups
+        return [
+          {
+            layerName: "Background",  // all pools and lanes are always behind all nodes and links
+            background: "transparent",  // can grab anywhere in bounds
+            movable: true, // allows users to re-order by dragging
+            copyable: false,  // can't copy lanes or pools
+            avoidable: false,  // don't impede AvoidsNodes routed Links
+            minLocation: new go.Point(NaN, -Infinity),  // only allow vertical movement
+            maxLocation: new go.Point(NaN, Infinity)
+          },
+          new go.Binding("location", "loc", go.Point.parse).makeTwoWay(go.Point.stringify)
+        ];
+      }
+
+      // hide links between lanes when either lane is collapsed
+      function updateCrossLaneLinks(group) {
+        group.findExternalLinksConnected().each(function(l) {
+          l.visible = (l.fromNode.isVisible() && l.toNode.isVisible());
+        });
+      }
+
+      // each Group is a "swimlane" with a header on the left and a resizable lane on the right
+      myDiagram.groupTemplate =
+        $(go.Group, "Horizontal", groupStyle(),
+          {
+            selectionObjectName: "SHAPE",  // selecting a lane causes the body of the lane to be highlit, not the label
+            resizable: true, resizeObjectName: "SHAPE",  // the custom resizeAdornmentTemplate only permits two kinds of resizing
+            layout: $(go.LayeredDigraphLayout,  // automatically lay out the lane's subgraph
+              {
+                isInitial: false,  // don't even do initial layout
+                isOngoing: false,  // don't invalidate layout when nodes or links are added or removed
+                direction: 0,
+                columnSpacing: 10,
+                layeringOption: go.LayeredDigraphLayout.LayerLongestPathSource
+              }),
+            computesBoundsAfterDrag: true,  // needed to prevent recomputing Group.placeholder bounds too soon
+            computesBoundsIncludingLinks: false,  // to reduce occurrences of links going briefly outside the lane
+            computesBoundsIncludingLocation: true,  // to support empty space at top-left corner of lane
+            handlesDragDropForMembers: true,  // don't need to define handlers on member Nodes and Links
+            mouseDrop: function(e, grp) {  // dropping a copy of some Nodes and Links onto this Group adds them to this Group
+              if (!e.shift) return;  // cannot change groups with an unmodified drag-and-drop
+              // don't allow drag-and-dropping a mix of regular Nodes and Groups
+              if (!e.diagram.selection.any(function(n) { return n instanceof go.Group; })) {
+                var ok = grp.addMembers(grp.diagram.selection, true);
+                if (ok) {
+                  updateCrossLaneLinks(grp);
+                } else {
+                  grp.diagram.currentTool.doCancel();
+                }
+              } else {
+                e.diagram.currentTool.doCancel();
+              }
+            },
+            subGraphExpandedChanged: function(grp) {
+              var shp = grp.resizeObject;
+              if (grp.diagram.undoManager.isUndoingRedoing) return;
+              if (grp.isSubGraphExpanded) {
+                shp.height = grp._savedBreadth;
+              } else {
+                grp._savedBreadth = shp.height;
+                shp.height = NaN;
+              }
+              updateCrossLaneLinks(grp);
+            }
+          },
+          new go.Binding("isSubGraphExpanded", "expanded").makeTwoWay(),
+          // the lane header consisting of a Shape and a TextBlock
+          $(go.Panel, "Horizontal",
+            {
+              name: "HEADER",
+              angle: 270,  // maybe rotate the header to read sideways going up
+              alignment: go.Spot.Center
+            },
+            $(go.Panel, "Horizontal",  // this is hidden when the swimlane is collapsed
+              new go.Binding("visible", "isSubGraphExpanded").ofObject(),
+              $(go.Shape, "Diamond",
+                { width: 8, height: 8, fill: "white" },
+                new go.Binding("fill", "color")),
+              $(go.TextBlock,  // the lane label
+                { font: "bold 13pt sans-serif", editable: true, margin: new go.Margin(2, 0, 0, 0) },
+                new go.Binding("text", "text").makeTwoWay())
+            ),
+            $("SubGraphExpanderButton", { margin: 5 })  // but this remains always visible!
+          ),  // end Horizontal Panel
+          $(go.Panel, "Auto",  // the lane consisting of a background Shape and a Placeholder representing the subgraph
+            $(go.Shape, "Rectangle",  // this is the resized object
+              { name: "SHAPE", fill: "white" },
+              new go.Binding("fill", "color"),
+              new go.Binding("desiredSize", "size", go.Size.parse).makeTwoWay(go.Size.stringify)),
+            $(go.Placeholder,
+              { padding: 12, alignment: go.Spot.TopLeft }),
+            $(go.TextBlock,  // this TextBlock is only seen when the swimlane is collapsed
+              {
+                name: "LABEL",
+                font: "bold 13pt sans-serif", editable: true,
+                angle: 0, alignment: go.Spot.TopLeft, margin: new go.Margin(2, 0, 0, 4)
+              },
+              new go.Binding("visible", "isSubGraphExpanded", function(e) { return !e; }).ofObject(),
+              new go.Binding("text", "text").makeTwoWay())
+          )  // end Auto Panel
+        );  // end Group
+
+      // define a custom resize adornment that has two resize handles if the group is expanded
+      myDiagram.groupTemplate.resizeAdornmentTemplate =
+        $(go.Adornment, "Spot",
+          $(go.Placeholder),
+          $(go.Shape,  // for changing the length of a lane
+            {
+              alignment: go.Spot.Right,
+              desiredSize: new go.Size(7, 50),
+              fill: "lightblue", stroke: "dodgerblue",
+              cursor: "col-resize"
+            },
+            new go.Binding("visible", "", function(ad) {
+              if (ad.adornedPart === null) return false;
+              return ad.adornedPart.isSubGraphExpanded;
+            }).ofObject()),
+          $(go.Shape,  // for changing the breadth of a lane
+            {
+              alignment: go.Spot.Bottom,
+              desiredSize: new go.Size(50, 7),
+              fill: "lightblue", stroke: "dodgerblue",
+              cursor: "row-resize"
+            },
+            new go.Binding("visible", "", function(ad) {
+              if (ad.adornedPart === null) return false;
+              return ad.adornedPart.isSubGraphExpanded;
+            }).ofObject())
+        );
+
+      myDiagram.groupTemplateMap.add("Pool",
+        $(go.Group, "Auto", groupStyle(),
+          { // use a simple layout that ignores links to stack the "lane" Groups on top of each other
+            layout: $(PoolLayout, { spacing: new go.Size(0, 0) })  // no space between lanes
+          },
+          $(go.Shape,
+            { fill: "white" },
+            new go.Binding("fill", "color")),
+          $(go.Panel, "Table",
+            { defaultColumnSeparatorStroke: "black" },
+            $(go.Panel, "Horizontal",
+              { column: 0, angle: 270 },
+              $(go.TextBlock,
+                { font: "bold 16pt sans-serif", editable: true, margin: new go.Margin(2, 0, 0, 0) },
+                new go.Binding("text").makeTwoWay())
+            ),
+            $(go.Placeholder,
+              { column: 1 })
+          )
+        ));
+
+      myDiagram.linkTemplate =
+        $(go.Link,
+          { routing: go.Link.AvoidsNodes, corner: 5 },
+          { relinkableFrom: true, relinkableTo: true },
+          $(go.Shape),
+          $(go.Shape, { toArrow: "Standard" })
+        );
+
+      // define some sample graphs in some of the lanes
+      myDiagram.model = new go.GraphLinksModel(
+        [ // node data
+          { key: "Pool1", text: "Pool", isGroup: true, category: "Pool" },
+          { key: "Pool2", text: "Pool2", isGroup: true, category: "Pool" },
+          { key: "Lane1", text: "Lane1", isGroup: true, group: "Pool1", color: "lightblue" },
+          { key: "Lane2", text: "Lane2", isGroup: true, group: "Pool1", color: "lightgreen" },
+          { key: "Lane3", text: "Lane3", isGroup: true, group: "Pool1", color: "lightyellow" },
+          { key: "Lane4", text: "Lane4", isGroup: true, group: "Pool1", color: "orange" },
+          { key: "oneA", group: "Lane1" },
+          { key: "oneB", group: "Lane1" },
+          { key: "oneC", group: "Lane1" },
+          { key: "oneD", group: "Lane1" },
+          { key: "twoA", group: "Lane2" },
+          { key: "twoB", group: "Lane2" },
+          { key: "twoC", group: "Lane2" },
+          { key: "twoD", group: "Lane2" },
+          { key: "twoE", group: "Lane2" },
+          { key: "twoF", group: "Lane2" },
+          { key: "twoG", group: "Lane2" },
+          { key: "fourA", group: "Lane4" },
+          { key: "fourB", group: "Lane4" },
+          { key: "fourC", group: "Lane4" },
+          { key: "fourD", group: "Lane4" },
+          { key: "Lane5", text: "Lane5", isGroup: true, group: "Pool2", color: "lightyellow" },
+          { key: "Lane6", text: "Lane6", isGroup: true, group: "Pool2", color: "lightgreen" },
+          { key: "fiveA", group: "Lane5" },
+          { key: "sixA", group: "Lane6" }
+        ],
+        [ // link data
+          { from: "oneA", to: "oneB" },
+          { from: "oneA", to: "oneC" },
+          { from: "oneB", to: "oneD" },
+          { from: "oneC", to: "oneD" },
+          { from: "twoA", to: "twoB" },
+          { from: "twoA", to: "twoC" },
+          { from: "twoA", to: "twoF" },
+          { from: "twoB", to: "twoD" },
+          { from: "twoC", to: "twoD" },
+          { from: "twoD", to: "twoG" },
+          { from: "twoE", to: "twoG" },
+          { from: "twoF", to: "twoG" },
+          { from: "fourA", to: "fourB" },
+          { from: "fourB", to: "fourC" },
+          { from: "fourC", to: "fourD" }
+        ]);
+      // force all lanes' layouts to be performed
+      relayoutLanes();
+    }  // end init
+
+    // Show the diagram's model in JSON format
+    function save() {
+      document.getElementById("mySavedModel").value = myDiagram.model.toJson();
+      myDiagram.isModified = false;
+    }
+    function load() {
+      myDiagram.model = go.Model.fromJson(document.getElementById("mySavedModel").value);
+      myDiagram.delayInitialization(relayoutDiagram);
+    }
+
+    init();
+    </script>
+</body>
+</html>

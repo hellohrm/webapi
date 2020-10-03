@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\api"
+    "\\etc",
+    "\\node_modules",
+    "\\public"
   ],
-  "SelectedNode": "\\server.js",
+  "SelectedNode": "\\package.json",
   "PreviewInSolutionExplorer": false
 }

@@ -294,6 +294,9 @@ app.use(function (req, res) {
 
 //app.listen(port)
 
+//app.engine('html', require('ejs').renderFile);
+//app.set('view engine', 'html');
+
 const socket = require("socket.io");
 const server = app.listen(port, function () {
     console.log(`Listening on port ${port}`);

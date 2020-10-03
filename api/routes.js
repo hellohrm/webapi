@@ -32,7 +32,7 @@ module.exports = function (app) {
         //res.send(JSON.stringify(hostINFO));
         //res.end();
         var path = require("path") //assuming express is installed 
-        res.sendFile(path.join(__dirname + '/../public/index.html'));
+        res.sendFile(path.join(__dirname + '/../public/admin.html'));
         res.end;
     });
 
