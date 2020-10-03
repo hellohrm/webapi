@@ -50,7 +50,7 @@
                     <!-- start: SEARCH FORM -->
                     <!-- end: SEARCH FORM -->
                     <!-- start: MAIN NAVIGATION MENU -->
-                    <ul class="main-navigation-menu">
+                    <ul class="main-navigation-menu" style="margin:0px">
                         <li>
                             <a href="index.html">
                                 <div class="item-content">
@@ -416,6 +416,9 @@
             width: 100%;
         }
         @media (max-width: 999px) {
+            #sidebar {
+                top: 65px!important;
+            }
             .toikhoqua {
                 position: fixed;
                 top: 65px;
@@ -437,7 +440,12 @@
 
 
             }
-
+        @media (min-width: 768px){}
+            .navbar .navbar-header {
+                width: 260px;
+                height: 60px!important;
+            }
+        }
         .chrome-tabs-bottom-bar {
             height: 3px;
             background-color: #fff;
