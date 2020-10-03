@@ -2,9 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\etc",
-    "\\node_modules",
-    "\\public"
+    "\\views",
+    "\\views\\pages",
+    "\\views\\partials"
   ],
-  "SelectedNode": "\\package.json",
+  "SelectedNode": "\\views\\pages\\about.ejs",
   "PreviewInSolutionExplorer": false
 }

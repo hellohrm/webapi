@@ -31,8 +31,10 @@ module.exports = function (app) {
         //res.setHeader('Content-Type', 'application/json');
         //res.send(JSON.stringify(hostINFO));
         //res.end();
-        var path = require("path") //assuming express is installed 
-        res.sendFile(path.join(__dirname + '/../public/admin.html'));
+        //var path = require("path") //assuming express is installed 
+        //res.sendFile(path.join(__dirname + '/../public/admin.html'));
+        //res.render(path.join(__dirname + '/../views/pages/index.ejs'));
+        res.render('../views/pages/index.ejs');
         res.end;
     });
 
