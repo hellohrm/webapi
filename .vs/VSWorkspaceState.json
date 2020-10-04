@@ -2,8 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\etc",
-    "\\views\\partials"
+    "\\views",
+    "\\views\\partials",
+    "\\views\\partials\\_shared"
   ],
-  "SelectedNode": "\\views",
+  "SelectedNode": "\\views\\partials\\_shared\\_sidebar.html",
   "PreviewInSolutionExplorer": false
 }

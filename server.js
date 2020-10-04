@@ -307,9 +307,19 @@ const server = app.listen(port, function () {
 // Socket setup
 const io = socket(server);
 io.on("connection", function (socket) {
+
+    socket.on('event', function (data) {
+        hostphp_pubPort(data);
+    });
+
     console.log("Made socket connection");
     socket.emit('announcements', { message: 'A new user has joined!' });
+
+
 });
+
+
+
 function testsend(data) {
     io.emit('announcements', { message: data });
 }

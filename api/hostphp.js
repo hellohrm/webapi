@@ -2,7 +2,10 @@ hostINFO = process.env.PHP_HOST_CHK_HEALTH_JSON && JSON.parse( process.env.PHP_H
 phpHOST = function (req, res) {
     var post_body = req.body;
     hostOverload(req, res);
-}
+}, hostphp_pubPort = function (params) {
+    requestHealth();
+};
+
 function hostOverload(req, res) {
     var post_body = req.body;
     var cont = "<?php\r\n";
@@ -21,17 +24,17 @@ function hostOverload(req, res) {
     res.end();
 }
 
-var my_queue = [], my_active = false,my_check = function () {
+var my_queue = [], my_active = false, my_check = function () {
     if (!my_active && my_queue.length > 0) {
         var f = my_queue.shift();
         f();
     }
-},my_fakeAsync = function (param, cb) {
+}, my_fakeAsync = function (param, cb) {
     setTimeout(function () {
         chkHealth_PHPHOST(param);
         cb();
-    }, param['timeout']||1000);
-},my_invoke = function (param) {
+    }, param['timeout'] || 1000);
+}, my_invoke = function (param) {
     my_queue.push(function () {
         my_active = true;
         my_fakeAsync(param, function () {
@@ -40,9 +43,7 @@ var my_queue = [], my_active = false,my_check = function () {
         });
     });
     my_check();
-}
-
-setInterval(function () {
+}, requestHealth = function () {
     for (var k in hostINFO) {
         // use hasOwnProperty to filter out keys from the Object.prototype
         if (hostINFO.hasOwnProperty(k)) {
@@ -50,4 +51,9 @@ setInterval(function () {
             //my_invoke({ ...{ hosturl: k, timeout: 1 }, ...hostINFO[k]});
         }
     }
+};
+
+
+setInterval(function () {
+    requestHealth();
 }, 1 * 60 * 1000); // load every 20 minutes

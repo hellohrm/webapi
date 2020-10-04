@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!-- Template Name: ClipTwo - Responsive Admin Template build with Bootstrap 4.x | Author: ClipTheme -->
 <!--[if IE 8]><html class="ie8" lang="en"><![endif]-->
 <!--[if IE 9]><html class="ie9" lang="en"><![endif]-->
@@ -257,72 +257,73 @@
                 </div>
                 <div class="wrap-content container" id="container">
                     <section id="page-title">
-                        <div class="row">
+                    </section>
+                    <div class="row">
 
-                            <div class="surface" style="height:500px">
-                                <div class="mock-browser">
-
-                                    <div class="chrome-tabs-optional-shadow-below-bottom-bar"></div>
-                                    <div class="mock-browser-content">
-                                        <div class="buttons">
-                                            <button data-theme-toggle>Toggle dark theme</button>
-                                            <button data-add-tab>Add new tab</button>
-                                            <button data-add-background-tab>Add tab in the background</button>
-                                            <button data-remove-tab>Remove active tab</button>
-                                        </div>
+                        <div class="surface" style="padding:0px;margin:0px">
+                            <div class="mock-browser" style="padding:0px;margin:0px">
+                                <div class="chrome-tabs-optional-shadow-below-bottom-bar" style="padding:0px;margin:0px"></div>
+                                <div class="mock-browser-content" style="padding:0px;margin:0px">
+                                    <div class="buttons">
+                                        <button data-update-health>Update PHP Host Health</button>
+                                        <button data-theme-toggle>Toggle dark theme</button>
+                                        <button data-add-tab>Add new tab</button>
+                                        <button data-add-background-tab>Add tab in the background</button>
+                                        <button data-remove-tab>Remove active tab</button>
                                     </div>
                                 </div>
-
-
-
-                                <style>
-                                    .made-by {
-                                        margin-top: auto;
-                                        --active-background-color: #dee1e6;
-                                        color: #848890;
-                                        font-size: 14px;
-                                        font-family: Avenir, "Avenir Next", "Segoe UI", Arial, "Helvetica Neue", Helvetica, sans-serif;
-                                        text-align: center;
-                                        -webkit-font-smoothing: antialiased;
-                                        font-weight: bold;
-                                    }
-
-                                    html.dark-theme .made-by {
-                                        --active-background-color: #242628;
-                                        color: #838488;
-                                    }
-
-                                    .made-by-link {
-                                        color: inherit;
-                                        text-decoration: none;
-                                        display: inline-block;
-                                        padding: 1em;
-                                        border-radius: .5em;
-                                    }
-
-                                        .made-by-link:hover:not(:active) {
-                                            opacity: .7;
-                                        }
-
-                                        .made-by-link:hover:active {
-                                            background: var(--active-background-color);
-                                        }
-
-                                    .made-by-logo {
-                                        display: block;
-                                        height: 3.5em;
-                                        width: 7em;
-                                        margin: 0 auto .75em;
-                                    }
-                                </style>
-
-
                             </div>
 
 
+
+                            <style>
+                                .made-by {
+                                    margin-top: auto;
+                                    --active-background-color: #dee1e6;
+                                    color: #848890;
+                                    font-size: 14px;
+                                    font-family: Avenir, "Avenir Next", "Segoe UI", Arial, "Helvetica Neue", Helvetica, sans-serif;
+                                    text-align: center;
+                                    -webkit-font-smoothing: antialiased;
+                                    font-weight: bold;
+                                }
+
+                                html.dark-theme .made-by {
+                                    --active-background-color: #242628;
+                                    color: #838488;
+                                }
+
+                                .made-by-link {
+                                    color: inherit;
+                                    text-decoration: none;
+                                    display: inline-block;
+                                    padding: 1em;
+                                    border-radius: .5em;
+                                }
+
+                                    .made-by-link:hover:not(:active) {
+                                        opacity: .7;
+                                    }
+
+                                    .made-by-link:hover:active {
+                                        background: var(--active-background-color);
+                                    }
+
+                                .made-by-logo {
+                                    display: block;
+                                    height: 3.5em;
+                                    width: 7em;
+                                    margin: 0 auto .75em;
+                                }
+                            </style>
+
+
                         </div>
-                    </section>
+
+
+                    </div>
                 </div>
+                <div id="log"></div>
             </div>
         </div>
         <!-- / sidebar -->
@@ -370,35 +371,35 @@
     <!-- end: JAVASCRIPTS -->
 
     <script type="text/javascript">
-          if (typeof Object.assign != 'function') {
-              // Must be writable: true, enumerable: false, configurable: true
-              Object.defineProperty(Object, "assign", {
-                  value: function assign(target, varArgs) { // .length of function is 2
-                      'use strict';
-                      if (target == null) { // TypeError if undefined or null
-                          throw new TypeError('Cannot convert undefined or null to object');
-                      }
+        if (typeof Object.assign != 'function') {
+            // Must be writable: true, enumerable: false, configurable: true
+            Object.defineProperty(Object, "assign", {
+                value: function assign(target, varArgs) { // .length of function is 2
+                    'use strict';
+                    if (target == null) { // TypeError if undefined or null
+                        throw new TypeError('Cannot convert undefined or null to object');
+                    }
 
-                      var to = Object(target);
+                    var to = Object(target);
 
-                      for (var index = 1; index < arguments.length; index++) {
-                          var nextSource = arguments[index];
+                    for (var index = 1; index < arguments.length; index++) {
+                        var nextSource = arguments[index];
 
-                          if (nextSource != null) { // Skip over if undefined or null
-                              for (var nextKey in nextSource) {
-                                  // Avoid bugs when hasOwnProperty is shadowed
-                                  if (Object.prototype.hasOwnProperty.call(nextSource, nextKey)) {
-                                      to[nextKey] = nextSource[nextKey];
-                                  }
-                              }
-                          }
-                      }
-                      return to;
-                  },
-                  writable: true,
-                  configurable: true
-              });
-          }
+                        if (nextSource != null) { // Skip over if undefined or null
+                            for (var nextKey in nextSource) {
+                                // Avoid bugs when hasOwnProperty is shadowed
+                                if (Object.prototype.hasOwnProperty.call(nextSource, nextKey)) {
+                                    to[nextKey] = nextSource[nextKey];
+                                }
+                            }
+                        }
+                    }
+                    return to;
+                },
+                writable: true,
+                configurable: true
+            });
+        }
     </script>
 
 
@@ -415,37 +416,44 @@
             z-index: 2000;
             width: 100%;
         }
+
         @media (max-width: 999px) {
             #sidebar {
-                top: 65px!important;
+                top: 65px !important;
             }
+
             .toikhoqua {
                 position: fixed;
                 top: 65px;
                 z-index: 2000;
                 width: 100%;
             }
+
             .main-content {
-                top:50px!important;
+                top: 50px !important;
             }
         }
-            @media (min-width: 1000px) {
-                .chrome-tabs {
-                    position: absolute;
-                    margin-top: -47px;
-                    z-index: 10000000;
-                    width: 500px;
-                    background: none !important;
-                }
 
-
-            }
-        @media (min-width: 768px){}
-            .navbar .navbar-header {
-                width: 260px;
-                height: 60px!important;
+        @media (min-width: 1000px) {
+            .chrome-tabs {
+                position: absolute;
+                margin-top: -47px;
+                z-index: 10000000;
+                width: 500px;
+                background: none !important;
             }
         }
+
+        @media (min-width: 768px) {
+        }
+
+        .navbar .navbar-header {
+            width: 260px;
+            height: 60px !important;
+        }
+
+        }
+
         .chrome-tabs-bottom-bar {
             height: 3px;
             background-color: #fff;
@@ -469,7 +477,7 @@
         var el = document.querySelector('.chrome-tabs');
         var chromeTabs = new ChromeTabs();
 
-        chromeTabs.init(el,function () {
+        chromeTabs.init(el, function () {
             var cb = 1;
         });
 
@@ -526,6 +534,49 @@
             }
         });
     </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.1/socket.io.js"></script>
+
+    <script type="text/javascript">
+        const socket = io('/');
+        socket.on('announcements', function (data) {
+            var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            var today = new Date();
+
+            //console.log(today.toLocaleDateString("en-US")); // 9/17/2016
+            //console.log(today.toLocaleDateString("en-US", options)); // Saturday, September 17, 2016
+            //console.log(today.toLocaleDateString("hi-IN", options)); // शनिवार, 17 सितंबर 2016
+            //log(today.toLocaleDateString("vi-VN"), data.message);
+            log(today.toLocaleString("vi-VN") + ' : ', data.message);
+        });
+        function log(msg, data) {
+            var tr = document.createElement('tr');
+            var th = document.createElement('th');
+            th.setAttribute("style", "text-align: left; vertical-align: top;");
+            var td;
+
+            th.appendChild(document.createTextNode(msg));
+            tr.appendChild(th);
+
+            if (data) {
+                td = document.createElement('td');
+                pre = document.createElement('code');
+                pre.setAttribute("style", "white-space: pre-wrap;");
+                td.appendChild(pre);
+                pre.appendChild(document.createTextNode(data));
+                tr.appendChild(td);
+            } else {
+                th.setAttribute('colspan', '2');
+            };
+            var logEL = document.getElementById('log');
+            logEL.insertBefore(tr, logEL.firstChild);
+        }
+        document.querySelector('button[data-update-health]').addEventListener('click', function (_) {
+            socket.emit('event', { message: 'Hey, I have an important message!' });
+        });
+
+    </script>
+
 </body>
 
 </html>
