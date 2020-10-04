@@ -569,7 +569,13 @@
                 th.setAttribute('colspan', '2');
             };
             var logEL = document.getElementById('log');
-            logEL.insertBefore(tr, logEL.firstChild);
+            if (logEL.childNodes.length < 50) {
+                logEL.insertBefore(tr, logEL.firstChild);
+            } else {
+                logEL.innerHTML = "";
+                logEL.appendChild(tr);
+            };
+
         }
         document.querySelector('button[data-update-health]').addEventListener('click', function (_) {
             socket.emit('event', { message: 'Hey, I have an important message!' });
