@@ -66,7 +66,7 @@ module.exports = function (app) {
 
     // todoList Routes
     app.route('/health_state').post(function (req, res) {
-        phpHOST(req, res);
+        hostphp_pubPort('hostOverload', { 'req': req, 'res': res});
     });
 
 

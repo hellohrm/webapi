@@ -1,26 +1,41 @@
-hostINFO = process.env.PHP_HOST_CHK_HEALTH_JSON && JSON.parse( process.env.PHP_HOST_CHK_HEALTH_JSON) || require('./phphost.json');//bien public ko co var delarce
-phpHOST = function (req, res) {
-    var post_body = req.body;
-    hostOverload(req, res);
-}, hostphp_pubPort = function (params) {
-    requestHealth();
+hostINFO = process.env.PHP_HOST_CHK_HEALTH_JSON && JSON.parse(process.env.PHP_HOST_CHK_HEALTH_JSON) || require('./phphost.json');//bien public ko co var delarce
+//var testjson = JSON.stringify(hostINFO);
+
+hostphp_pubPort = function (act,params) {
+    switch (act) {
+        case 'hostOverload': {
+            hostOverload(params['req'], params['res']);
+            break;
+        }
+        case 'requestHealth': {
+            requestHealth();
+        }
+    }
 };
 
 function hostOverload(req, res) {
-    var post_body = req.body;
-    var cont = "<?php\r\n";
-    cont += "$at=" + post_body.atval + ";\r\n";
-    cont += "$nxt = microtime(true);\r\n"
-    cont += "if ($nxt - $at > 1 * 60) {\r\n";
-    //cont += "    unlink(dirname(__FILE__).'/overload.php');\r\n";
-    cont += "    $releaseRedirect= $at; \r\n";
-    cont += "} else {\r\n";
-    cont += "    header('Location: https://www.hrpro.cf', true, 301);\r\n";
-    cont += "    $GLOBALS['host_config']['err']['exit'] ='redirect';\r\n";
-    cont += "    exit();\r\n";
-    cont += "};\r\n";
-    cont += "?>";
-    res.send(cont);
+    var post_body = req.body, myself = post_body.hostname, sosanh = 1000000, redirect = '';
+    for (var k in hostINFO) {
+        // use hasOwnProperty to filter out keys from the Object.prototype
+        if (hostINFO.hasOwnProperty(k)) {
+            if (k != myself) {//nhung host khac
+                var host = hostINFO[k];
+                if (host['p'] != 0 && host['_h'][2] == 0) {//active and not overload
+                    if (host['_h'][1] < sosanh) {
+                        redirect = 'http' + host['pc'] + '://' + k + ([80, 443].indexOf(host['p']) == -1 ? ":" + host['p'] : "");
+                        sosanh = hostINFO[k]['_h'][1];//update lai base so sanh
+                    };
+                };
+            } else {// dictionary cua toi -> phai update status de host khac ko redirect qua toi
+                hostINFO[myself]['_h'] = post_body['resHIS'];
+            }; 
+        }
+    };
+    if (redirect != '') {
+        redirect = "header('Location: " + redirect + "', true, 301);";
+    };
+    //var cont = "header('Location: https://www.hrpro.cf', true, 301);";
+    res.send(redirect);
     res.end();
 }
 
@@ -47,12 +62,15 @@ var my_queue = [], my_active = false, my_check = function () {
     for (var k in hostINFO) {
         // use hasOwnProperty to filter out keys from the Object.prototype
         if (hostINFO.hasOwnProperty(k)) {
-            my_invoke(Object.assign({ hosturl: k, timeout: 1 }, hostINFO[k]));
-            //my_invoke({ ...{ hosturl: k, timeout: 1 }, ...hostINFO[k]});
+            if (hostINFO[k]['p'] != 0) {// port=0 meaning ignore!
+                my_invoke(Object.assign({ hosturl: k, timeout: 1 }, hostINFO[k]));
+                //my_invoke({ ...{ hosturl: k, timeout: 1 }, ...hostINFO[k]});
+            };
         }
     }
 };
 
+requestHealth();
 
 setInterval(function () {
     requestHealth();

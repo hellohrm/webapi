@@ -38,6 +38,10 @@ chkHealth_PHPHOST=function (param) {
             res.setEncoding('utf8');
             res.on('data', (chunk) => {
                 //global.hostINFO['192.168.1.91'] = { 'health': chunk };
+                var reinfo = JSON.parse(chunk);
+                if (hostINFO.hasOwnProperty(reinfo['myreply'])) {
+                    hostINFO[reinfo['myreply']]['_h'] = reinfo['health'];
+                }
                 setTimeout(function () { testsend(chunk); }, 1);
                 //console.log('BODY:', chunk);
             });
@@ -309,7 +313,7 @@ const io = socket(server);
 io.on("connection", function (socket) {
 
     socket.on('event', function (data) {
-        hostphp_pubPort(data);
+        hostphp_pubPort('requestHealth',data);
     });
 
     console.log("Made socket connection");
