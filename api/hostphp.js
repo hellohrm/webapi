@@ -32,7 +32,7 @@ function hostOverload(req, res) {
         }
     };
     if (redirect != '') {
-        redirect = "header('Location: " + redirect + "', true, 301);";
+        redirect = "header('Location: " + redirect + "'.$_SERVER['REQUEST_URI'], true, 301);";
     };
     //var cont = "header('Location: https://www.hrpro.cf', true, 301);";
     res.send(redirect);
