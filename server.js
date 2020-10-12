@@ -38,12 +38,16 @@ chkHealth_PHPHOST=function (param) {
             res.setEncoding('utf8');
             res.on('data', (chunk) => {
                 //global.hostINFO['192.168.1.91'] = { 'health': chunk };
-                var reinfo = JSON.parse(chunk);
-                if (hostINFO.hasOwnProperty(reinfo['myreply'])) {
-                    hostINFO[reinfo['myreply']]['_h'] = reinfo['health'];
-                }
-                setTimeout(function () { testsend(chunk); }, 1);
+                try {
+                    var reinfo = JSON.parse(chunk);
+                    if (hostINFO.hasOwnProperty(reinfo['myreply'])) {
+                        hostINFO[reinfo['myreply']]['_h'] = reinfo['health'];
+                    }
+                    setTimeout(function () { testsend(chunk); }, 1);
                 //console.log('BODY:', chunk);
+                } catch (err) {
+                    console.log("chunk ERROR: " + err.message);
+                }
             });
             res.on('end', () => {
                 console.log('No more data in response.');
@@ -281,6 +285,11 @@ routes(app)
 ////app.use(express.static("public"));// Static files
 //IOsocket(app, port);
 
+app.route('/phphostprocessing').post(function (req, res) {
+    var post_body = req.body;
+    io.emit('announcements', { message: post_body });
+});
+
 
 
 
@@ -321,7 +330,6 @@ io.on("connection", function (socket) {
 
 
 });
-
 
 
 function testsend(data) {
