@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\api",
-    "\\etc"
+    "\\etc",
+    "\\views"
   ],
-  "SelectedNode": "\\api",
+  "SelectedNode": "\\views\\index.html",
   "PreviewInSolutionExplorer": false
 }
