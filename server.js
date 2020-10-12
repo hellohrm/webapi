@@ -287,7 +287,7 @@ routes(app)
 
 app.route('/phphostprocessing').post(function (req, res) {
     var post_body = req.body;
-    io.emit('announcements', { message: post_body });
+    io.emit('announcements', { message: JSON.stringify( post_body) });
 });
 
 
