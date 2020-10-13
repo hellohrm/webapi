@@ -302,7 +302,7 @@ app.route('/phphostprocessing').post(function (req, res) {
 
     var textToEncrypt = new Date().toISOString().substr(0, 19) + '|My super secret information.';
     var encryptionMethod = 'AES-256-CBC';
-    var secret = "My32charPasswordAndInitVectorStr"; //must be 32 char length
+    var secret = process.env.TOKEN_SECRET || "My32charPasswordAndInitVectorStr"; //must be 32 char length
     var iv = secret.substr(0, 16);
 
     var encryptedMessage = encrypt(textToEncrypt, encryptionMethod, secret, iv);
