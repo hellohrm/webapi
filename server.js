@@ -1,12 +1,15 @@
-const express = require('express')
+﻿const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
 require('dotenv').load()
 const port = process.env.PORT || 3000
-
-
+const crypto = require('crypto');
+const passtoken = process.env.TOKEN_SECRET || "T%oi#!Ty2@2@"; //must be 32 char length
+const encryptionMethod = 'AES-256-CBC';
+//
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
+//
 //
 var https = require('https'), http = require('http');
 require('./api/hostphp') //importing route
@@ -286,34 +289,40 @@ routes(app)
 //IOsocket(app, port);
 
 app.route('/phphostprocessing').post(function (req, res) {
-    var post_body = req.body;
-
-    var crypto = require('crypto');
-
-    var encrypt = function (plain_text, encryptionMethod, secret, iv) {
-        var encryptor = crypto.createCipheriv(encryptionMethod, secret, iv);
-        return encryptor.update(plain_text, 'utf8', 'base64') + encryptor.final('base64');
+    let post_body = req.body;
+    let $ciphertext = decodeURIComponent(post_body['token']);
+    //let buff = Buffer.from($ciphertext, 'base64');
+    //$ciphertext =  buff.toString();
+    let $_48 = $ciphertext.substr(80);// substr($ciphertext, 48);
+    let $_16_32 = $ciphertext.substr(16, 64);// substr($ciphertext, 16, 32);
+    $key256 = crypto.createHash('sha256').update(passtoken).digest("hex").toString();//php true
+    let $iv = $ciphertext.substr(0, 16);
+    let $Hmac = crypto.createHmac("sha256", $key256).update($_48 + $iv).digest("hex");//php false
+    //
+    if ($Hmac == $_16_32) {
+        //
+        $_48 = Buffer($_48, 'hex').toString('utf8');
+        let decryptor = crypto.createDecipheriv(encryptionMethod, $key256.substr(30, 32), $iv);
+        let decryptedMessage= decryptor.update($_48, 'base64', 'utf8') + decryptor.final('utf8');
+        //
+        //encrypt data to base64 send to php
+        $iv = crypto.randomBytes(8).toString('hex');
+        let encryptor = crypto.createCipheriv(encryptionMethod, $key256.substr(30, 32), $iv);
+        let encryptedMessage = encryptor.update(decryptedMessage, 'utf8', 'base64') + encryptor.final('base64');
+        //
+        //encode hex
+        $ciphertext = Buffer(encryptedMessage, 'utf8').toString('hex');
+        $Hmac = crypto.createHmac("sha256", $key256).update($ciphertext + $iv).digest("hex");//php false
+        //
+        //var c = $iv + $Hmac + $ciphertext;
+        let hostcofig = { 'data': decryptedMessage, 'token': $iv + $Hmac + $ciphertext };
+        res.setHeader('Content-Type', 'application/json');
+        res.send(JSON.stringify(hostcofig));
+        //
     };
-
-    var decrypt = function (encryptedMessage, encryptionMethod, secret, iv) {
-        var decryptor = crypto.createDecipheriv(encryptionMethod, secret, iv);
-        return decryptor.update(encryptedMessage, 'base64', 'utf8') + decryptor.final('utf8');
-    };
-
-    var textToEncrypt = new Date().toISOString().substr(0, 19) + '|My super secret information.';
-    var encryptionMethod = 'AES-256-CBC';
-    var secret = process.env.TOKEN_SECRET || "My32charPasswordAndInitVectorStr"; //must be 32 char length
-    var iv = secret.substr(0, 16);
-
-    var encryptedMessage = encrypt(textToEncrypt, encryptionMethod, secret, iv);
-    var decryptedMessage = decrypt(encryptedMessage, encryptionMethod, secret, iv);
-    var decryptedMessage = decrypt(decodeURIComponent(post_body['token']), encryptionMethod, secret, iv);
-
-    console.log(encryptedMessage);
-    console.log(decryptedMessage);
-
-
-    io.emit('announcements', { message: JSON.stringify( post_body) });
+    //
+    io.emit('announcements', { message: JSON.stringify(post_body) });
+    res.end();
 });
 
 
@@ -339,6 +348,7 @@ app.set('view engine', 'html');
 //app.engine('ejs', require('ejs').__express);
 //
 const socket = require("socket.io");
+const { exit } = require('process')
 const server = app.listen(port, function () {
     console.log(`Listening on port ${port}`);
     console.log(`http://localhost:${port}`);
