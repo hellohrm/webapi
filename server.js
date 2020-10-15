@@ -287,7 +287,29 @@ routes(app)
 //let IOsocket = require('./api/socketio') //importing route
 ////app.use(express.static("public"));// Static files
 //IOsocket(app, port);
-
+$accDB = {};
+class jsCACHE {
+    constructor(id) {
+        this.cnt = 0;
+        this.key = id;
+        this.val = {};
+    }
+    get cval() {
+        return this.val;
+    }
+    set cval(x) {
+        this.cnt++;
+        io.emit(this.key, { message: "Processing." + this.cnt });
+        this.val = x;
+    }
+    set _expire(x) {
+        setTimeout(this._that.bind(this), x);
+    }
+    _that() {
+        io.emit(this.key, { message: "Timeout create new user."});
+        delete $accDB[this.key];
+    }
+}
 app.route('/phphostprocessing').post(function (req, res) {
     let post_body = req.body;
     let $ciphertext = decodeURIComponent(post_body['token']);
@@ -305,6 +327,32 @@ app.route('/phphostprocessing').post(function (req, res) {
         let decryptor = crypto.createDecipheriv(encryptionMethod, $key256.substr(30, 32), $iv);
         let decryptedMessage= decryptor.update($_48, 'base64', 'utf8') + decryptor.final('utf8');
         //
+        let handshakeKEY, init_handshakeKEY = function () {
+            if ($accDB.hasOwnProperty(post_body['handshakeKEY'])) {
+                handshakeKEY = $accDB[post_body['handshakeKEY']];
+            } else {
+                handshakeKEY = new jsCACHE(post_body['handshakeKEY']);
+                $accDB[post_body['handshakeKEY']] = handshakeKEY;
+            };
+        };
+        switch (decryptedMessage.split('|')[0]) {
+            case 'init_acc_firstlogin': {
+                init_handshakeKEY();
+                handshakeKEY.cval = post_body;
+                break;
+            }
+            case 'create_new_acc_finish': {
+                init_handshakeKEY();
+                handshakeKEY._expire = 5000;
+                //
+                io.emit(post_body['handshakeKEY'], { message: JSON.stringify(post_body) });
+                break;
+            }
+            case 'init_acc_clientwelcome': {
+                io.emit(post_body['handshakeKEY'], { message: "Hi client keep patience!" });
+                break;
+            }
+        }
         //encrypt data to base64 send to php
         $iv = crypto.randomBytes(8).toString('hex');
         let encryptor = crypto.createCipheriv(encryptionMethod, $key256.substr(30, 32), $iv);
@@ -321,7 +369,6 @@ app.route('/phphostprocessing').post(function (req, res) {
         //
     };
     //
-    io.emit('announcements', { message: JSON.stringify(post_body) });
     res.end();
 });
 
