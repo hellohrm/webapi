@@ -313,6 +313,13 @@ class jsCACHE {
     }
 }
 app.route('/phphostprocessing').post(function (req, res) {
+
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE'); // If needed
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type'); // If needed
+    res.setHeader('Access-Control-Allow-Credentials', true); // If needed
+
+
     let post_body = req.body;
     let $ciphertext = decodeURIComponent(post_body['token']);
     //let buff = Buffer.from($ciphertext, 'base64');
