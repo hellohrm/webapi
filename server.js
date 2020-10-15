@@ -300,13 +300,15 @@ class jsCACHE {
     set cval(x) {
         this.cnt++;
         io.emit(this.key, { message: "Processing." + this.cnt });
+        console.log('emit: ' + post_body['handshakeKEY']);
         this.val = x;
     }
     set _expire(x) {
         setTimeout(this._that.bind(this), x);
     }
     _that() {
-        io.emit(this.key, { message: "Timeout create new user."});
+        io.emit(this.key, { message: "Timeout create new user." });
+        console.log('emit: ' + post_body['handshakeKEY']);
         delete $accDB[this.key];
     }
 }
@@ -346,10 +348,12 @@ app.route('/phphostprocessing').post(function (req, res) {
                 handshakeKEY._expire = 5000;
                 //
                 io.emit(post_body['handshakeKEY'], { message: JSON.stringify(post_body) });
+                console.log('emit: ' + post_body['handshakeKEY']);
                 break;
             }
             case 'init_acc_clientwelcome': {
                 io.emit(post_body['handshakeKEY'], { message: "Hi client keep patience!" });
+                console.log('emit: ' + post_body['handshakeKEY']);
                 break;
             }
         }
