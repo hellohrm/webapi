@@ -301,7 +301,7 @@ app.route('/phphostprocessing').post(function (req, res) {
     //
     if ($Hmac == $_16_32) {
         //
-        $_48 = Buffer($_48, 'hex').toString('utf8');
+        $_48 = Buffer.from($_48, 'hex').toString('utf8');
         let decryptor = crypto.createDecipheriv(encryptionMethod, $key256.substr(30, 32), $iv);
         let decryptedMessage= decryptor.update($_48, 'base64', 'utf8') + decryptor.final('utf8');
         //
@@ -311,7 +311,7 @@ app.route('/phphostprocessing').post(function (req, res) {
         let encryptedMessage = encryptor.update(decryptedMessage, 'utf8', 'base64') + encryptor.final('base64');
         //
         //encode hex
-        $ciphertext = Buffer(encryptedMessage, 'utf8').toString('hex');
+        $ciphertext = Buffer.from(encryptedMessage, 'utf8').toString('hex');
         $Hmac = crypto.createHmac("sha256", $key256).update($ciphertext + $iv).digest("hex");//php false
         //
         //var c = $iv + $Hmac + $ciphertext;
