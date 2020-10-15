@@ -300,15 +300,15 @@ class jsCACHE {
     set cval(x) {
         this.cnt++;
         io.emit(this.key, { message: "Processing." + this.cnt });
-        console.log('emit: ' + post_body['handshakeKEY']);
         this.val = x;
+        console.log('emit: ' + this.val['handshakeKEY']);
     }
     set _expire(x) {
         setTimeout(this._that.bind(this), x);
     }
     _that() {
         io.emit(this.key, { message: "Timeout create new user." });
-        console.log('emit: ' + post_body['handshakeKEY']);
+        console.log('emit: ' + this.val['handshakeKEY']);
         delete $accDB[this.key];
     }
 }
