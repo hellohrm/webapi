@@ -369,7 +369,7 @@ app.route('/phphostprocessing').post(function (req, res) {
                     io.emit(post_body['handshakeKEY'], { act: '..', message: JSON.stringify(post_body) });
                 };
                 handshakeKEY._expire(function (cacheVAL) {
-                    io.emit(cacheVAL['handshakeKEY'], { act: 'ok', message: "end di nhe em" });
+                    io.emit(cacheVAL['handshakeKEY'], { act: 'ok', message: "end di nhe em: " + timeout });
                 }, timeout);
                 break;
             }
