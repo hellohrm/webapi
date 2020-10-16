@@ -434,7 +434,8 @@ const server = app.listen(port, function () {
     console.log(`http://localhost:${port}`);
 });
 // Socket setup
-const io = socket(server);
+const io = socket(server, { origin: "*:*" });
+
 io.on("connection", function (socket) {
 
     socket.on('event', function (data) {
