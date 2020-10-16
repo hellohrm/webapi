@@ -293,22 +293,25 @@ class jsCACHE {
         this.cnt = 0;
         this.key = id;
         this.val = {};
+        this.hisprocess = [];
     }
-    get cval() {
-        return this.val;
+    get _hisprocess() {
+        return this.hisprocess;
+    }
+    set _hisprocess(scopework) {
+        this.hisprocess.push(scopework);
     }
     set cval(x) {
         this.cnt++;
-        io.emit(this.key, { message: "Processing." + this.cnt });
         this.val = x;
-        console.log('emit: ' + this.val['handshakeKEY']);
+        console.log('cacheset: ' + this.val['handshakeKEY']);
     }
     set _expire(x) {
-        setTimeout(this._that.bind(this), x);
+        clearTimeout(this.hwndExpire);
+        this.hwndExpire = setTimeout(this._that.bind(this), x);
     }
     _that() {
-        io.emit(this.key, { message: "Timeout create new user." });
-        console.log('emit: ' + "Timeout create new user.");
+        console.log('cachexpire: ' + this.val['handshakeKEY']);
         delete $accDB[this.key];
     }
 }
@@ -343,8 +346,12 @@ app.route('/phphostprocessing').post(function (req, res) {
                 handshakeKEY = new jsCACHE(post_body['handshakeKEY']);
                 $accDB[post_body['handshakeKEY']] = handshakeKEY;
             };
+            handshakeKEY._hisprocess = scopework;
         };
-        switch (decryptedMessage.split('|')[0]) {
+        var scopework = decryptedMessage.split('|')[0];
+        console.log(post_body['handshakeKEY'] + ': ' + scopework);
+        //
+        switch (scopework) {
             case 'init_acc_firstlogin': {
                 init_handshakeKEY();
                 handshakeKEY.cval = post_body;
@@ -352,15 +359,24 @@ app.route('/phphostprocessing').post(function (req, res) {
             }
             case 'create_new_acc_finish': {
                 init_handshakeKEY();
-                handshakeKEY._expire = 5000;
-                //
-                io.emit(post_body['handshakeKEY'], { message: JSON.stringify(post_body) });
-                console.log('emit: ' + post_body['handshakeKEY']);
+                let timeout = 5000;
+                if (handshakeKEY._hisprocess.indexOf('init_acc_clientwelcome') > -1) {
+                    timeout=0
+                    io.emit(post_body['handshakeKEY'], { message: "end di nhe em" });
+                } else {
+                    handshakeKEY.cval = post_body;
+                    io.emit(post_body['handshakeKEY'], { message: JSON.stringify(post_body) });
+                };
+                handshakeKEY._expire = timeout;
                 break;
             }
             case 'init_acc_clientwelcome': {
-                io.emit(post_body['handshakeKEY'], { message: "Hi client keep patience!" });
-                console.log('emit: ' + post_body['handshakeKEY']);
+                init_handshakeKEY();
+                if (handshakeKEY._hisprocess.indexOf('create_new_acc_finish') > -1) {
+                    io.emit(post_body['handshakeKEY'], { message: "Hi client keep patience!" });
+                } else {
+                    io.emit(post_body['handshakeKEY'], { message: "Hi client keep patience!" });
+                };
                 break;
             }
         }
