@@ -356,7 +356,7 @@ app.route('/phphostprocessing').post(function (req, res) {
             case 'init_acc_firstlogin': {
                 init_handshakeKEY();
                 handshakeKEY.cval = post_body;
-                io.emit(post_body['handshakeKEY'], { act: '..', message: JSON.stringify(post_body) });
+                //io.emit(post_body['handshakeKEY'], { act: '..', message: JSON.stringify(post_body) });
                 break;
             }
             case 'create_new_acc_finish': {
@@ -366,10 +366,10 @@ app.route('/phphostprocessing').post(function (req, res) {
                     timeout=0
                 } else {
                     handshakeKEY.cval = post_body;
-                    io.emit(post_body['handshakeKEY'], { act: '..', message: JSON.stringify(post_body) });
+                    //io.emit(post_body['handshakeKEY'], { act: '..', message: JSON.stringify(post_body) });
                 };
                 handshakeKEY._expire(function (cacheVAL) {
-                    io.emit(cacheVAL['handshakeKEY'], { act: 'ok', message: "end di nhe em: " + timeout });
+                    //io.emit(cacheVAL['handshakeKEY'], { act: 'ok', message: "end di nhe em: " + timeout });
                 }, timeout);
                 break;
             }
