@@ -306,11 +306,12 @@ class jsCACHE {
         this.val = x;
         console.log('cacheset: ' + this.val['handshakeKEY']);
     }
-    set _expire(x) {
+    _expire(cb,x) {
         clearTimeout(this.hwndExpire);
-        this.hwndExpire = setTimeout(this._that.bind(this), x);
+        this.hwndExpire = setTimeout(this._that.bind(this, cb), x);
     }
-    _that() {
+    _that(cb) {
+        cb(this.val);
         console.log('cachexpire: ' + this.val['handshakeKEY']);
         delete $accDB[this.key];
     }
@@ -355,6 +356,7 @@ app.route('/phphostprocessing').post(function (req, res) {
             case 'init_acc_firstlogin': {
                 init_handshakeKEY();
                 handshakeKEY.cval = post_body;
+                io.emit(post_body['handshakeKEY'], { act: '..', message: JSON.stringify(post_body) });
                 break;
             }
             case 'create_new_acc_finish': {
@@ -362,37 +364,41 @@ app.route('/phphostprocessing').post(function (req, res) {
                 let timeout = 5000;
                 if (handshakeKEY._hisprocess.indexOf('init_acc_clientwelcome') > -1) {
                     timeout=0
-                    io.emit(post_body['handshakeKEY'], { message: "end di nhe em" });
                 } else {
                     handshakeKEY.cval = post_body;
-                    io.emit(post_body['handshakeKEY'], { message: JSON.stringify(post_body) });
+                    io.emit(post_body['handshakeKEY'], { act: '..', message: JSON.stringify(post_body) });
                 };
-                handshakeKEY._expire = timeout;
+                handshakeKEY._expire(function (cacheVAL) {
+                    io.emit(cacheVAL['handshakeKEY'], { act: 'ok', message: "end di nhe em" });
+                }, timeout);
                 break;
             }
             case 'init_acc_clientwelcome': {
                 init_handshakeKEY();
+                var act = '..';
                 if (handshakeKEY._hisprocess.indexOf('create_new_acc_finish') > -1) {
-                    io.emit(post_body['handshakeKEY'], { message: "Hi client keep patience!" });
-                } else {
-                    io.emit(post_body['handshakeKEY'], { message: "Hi client keep patience!" });
+                    act = 'ok';
                 };
+                //
+                res.setHeader('Content-Type', 'application/json');
+                res.send(JSON.stringify({ act: act, message: "Hi client keep patience!" }));
+                //
                 break;
             }
         }
-        //encrypt data to base64 send to php
-        $iv = crypto.randomBytes(8).toString('hex');
-        let encryptor = crypto.createCipheriv(encryptionMethod, $key256.substr(30, 32), $iv);
-        let encryptedMessage = encryptor.update(decryptedMessage, 'utf8', 'base64') + encryptor.final('base64');
-        //
-        //encode hex
-        $ciphertext = Buffer.from(encryptedMessage, 'utf8').toString('hex');
-        $Hmac = crypto.createHmac("sha256", $key256).update($ciphertext + $iv).digest("hex");//php false
-        //
-        //var c = $iv + $Hmac + $ciphertext;
-        let hostcofig = { 'data': decryptedMessage, 'token': $iv + $Hmac + $ciphertext };
-        res.setHeader('Content-Type', 'application/json');
-        res.send(JSON.stringify(hostcofig));
+        ////encrypt data to base64 send to php
+        //$iv = crypto.randomBytes(8).toString('hex');
+        //let encryptor = crypto.createCipheriv(encryptionMethod, $key256.substr(30, 32), $iv);
+        //let encryptedMessage = encryptor.update(decryptedMessage, 'utf8', 'base64') + encryptor.final('base64');
+        ////
+        ////encode hex
+        //$ciphertext = Buffer.from(encryptedMessage, 'utf8').toString('hex');
+        //$Hmac = crypto.createHmac("sha256", $key256).update($ciphertext + $iv).digest("hex");//php false
+        ////
+        ////var c = $iv + $Hmac + $ciphertext;
+        //let hostcofig = { 'data': decryptedMessage, 'token': $iv + $Hmac + $ciphertext };
+        //res.setHeader('Content-Type', 'application/json');
+        //res.send(JSON.stringify(hostcofig));
         //
     };
     //
