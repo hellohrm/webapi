@@ -443,8 +443,7 @@ io.on("connection", function (socket) {
     });
 
     console.log("Made socket connection");
-    socket.emit('announcements', { message: 'A new user has joined!' });
-
+    //socket.emit('announcements', { message: 'A new user has joined!' });
 
 });
 
