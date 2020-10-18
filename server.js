@@ -338,7 +338,7 @@ app.route('/phphostprocessing').post(function (req, res) {
         //
         $_48 = Buffer.from($_48, 'hex').toString('utf8');
         let decryptor = crypto.createDecipheriv(encryptionMethod, $key256.substr(30, 32), $iv);
-        let decryptedMessage= decryptor.update($_48, 'base64', 'utf8') + decryptor.final('utf8');
+        let decryptedMessage = decryptor.update($_48, 'base64', 'utf8') + decryptor.final('utf8');
         //
         let handshakeKEY, init_handshakeKEY = function () {
             if ($accDB.hasOwnProperty(post_body['handshakeKEY'])) {
@@ -363,7 +363,7 @@ app.route('/phphostprocessing').post(function (req, res) {
                 init_handshakeKEY();
                 let timeout = 5000;
                 if (handshakeKEY._hisprocess.indexOf('init_acc_clientwelcome') > -1) {
-                    timeout=0
+                    timeout = 0
                 } else {
                     handshakeKEY.cval = post_body;
                     io.emit(post_body['handshakeKEY'], { act: '..', message: JSON.stringify(post_body) });
@@ -402,6 +402,10 @@ app.route('/phphostprocessing').post(function (req, res) {
         //
     };
     //
+    res.end();
+}).get(function (req, res) {
+    let post_body = req.body;
+    console.log(JSON.stringify(post_body));
     res.end();
 });
 
