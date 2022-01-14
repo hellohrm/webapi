@@ -1,4 +1,0 @@
-.env
-node_modules
-api/phphost.json
-api/redisinfo.json
