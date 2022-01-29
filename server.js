@@ -1,6 +1,8 @@
 ﻿var express = require('express');
 var http = require('http');
 
+const port = process.env.PORT || 3000
+
 const net = require('net');
 const pushsrv = net.createServer((c) => {
     // 'connection' listener
@@ -20,7 +22,7 @@ const pushsrv = net.createServer((c) => {
 pushsrv.on('error', (err) => {
     throw err;
 });
-pushsrv.listen(3000, () => {
+pushsrv.listen(port, () => {
     console.log('server bound');
 });
 
@@ -59,7 +61,7 @@ pushsrv.listen(3000, () => {
 
 //var name;
 
-//const port = process.env.PORT || 3000
+
 
 //const socket = require("socket.io");
 
