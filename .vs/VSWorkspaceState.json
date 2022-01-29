@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\api"
+    "\\api",
+    "\\chat"
   ],
-  "SelectedNode": "\\api\\routes.js",
+  "SelectedNode": "\\package.json",
   "PreviewInSolutionExplorer": false
 }

@@ -1,6 +1,31 @@
 ﻿var express = require('express');
 var http = require('http');
 
+const net = require('net');
+const pushsrv = net.createServer((c) => {
+    // 'connection' listener
+    console.log('client connected');
+    c.on('end', () => {
+        console.log('client disconnected');
+    });
+
+    c.on('data', (data) => {
+        console.log(data.toString());
+        c.write('Reply: ' + data.toString());
+    });
+
+    c.write('hello\r\n');
+     // c.pipe(c);
+});
+pushsrv.on('error', (err) => {
+    throw err;
+});
+pushsrv.listen(8124, () => {
+    console.log('server bound');
+});
+
+
+
 var app = express();
 var server = http.createServer(app);
 
@@ -8,8 +33,23 @@ var server = http.createServer(app);
 var path = require('path');
 app.use(express.static(path.join(__dirname, './chat')));
 app.get('/chat', (req, res) => {
-    debugger;
+    //debugger;
+    console.log(req.headers);
     res.sendFile(__dirname + '/chat/index.html');
+}).post('/chat', (req, res) => {
+    //debugger;
+    // push the data to body
+    // console.log(req.headers);
+    var body = [];
+    req.on('data', (chunk) => {
+        body.push(chunk);
+    }).on('end', () => {
+        // on end of data, perform necessary action
+        body = Buffer.concat(body).toString();
+        //response.write(request.body.user);
+        //response.end();
+        console.log(body);
+    });
 });
 
 
